@@ -13,13 +13,29 @@ h1, h2, h3 {
 }
 
 section {
-    padding: 60px 20px;
+    padding: 80px 20px;
     text-align: center;
+}
+section h2 {
+    font-size: 2.4rem;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+section h2::after {
+    content: "";
+    width: 60%;
+    height: 4px;
+    background: #d40000;
+    display: block;
+    margin: 8px auto 0;
+    border-radius: 2px;
 }
 
 /* HERO SECTION */
 .hero {
-    background: #e0e0e0; /* darker gray for better contrast */
+    background: #d9d9d9;
     padding: 100px 20px 80px;
     text-align: center;
     border-bottom: 6px solid #d40000;
