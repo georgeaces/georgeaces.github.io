@@ -163,6 +163,15 @@ section {
     text-align: center;
 }
 
+.trust-qr {
+    margin-top: 25px;
+}
+
+.trust-qr-img {
+    width: 160px;
+    margin-top: 10px;
+}
+
 .trust h2 {
     font-size: 2rem;
     margin-bottom: 10px;
