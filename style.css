@@ -121,6 +121,11 @@ section h2::after {
 .services {
     background: #ffffff;
 }
+.service-icon {
+    width: 50px;
+    margin-bottom: 15px;
+    filter: brightness(0) saturate(100%) invert(12%) sepia(96%) saturate(7480%) hue-rotate(356deg) brightness(92%) contrast(110%);
+}
 
 .service-grid {
     display: grid;
