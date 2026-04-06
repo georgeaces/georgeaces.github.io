@@ -5,63 +5,72 @@
   <title>Contact - ACES Insurance Services</title>
 
   <!-- 🔵 Toggle Switch Styling -->
-  <style>
-    .toggle-wrapper {
-      display: flex;
-      justify-content: center;
-      margin: 20px 0;
-    }
+<style>
+  .toggle-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
 
-    .toggle-switch {
-      position: relative;
-      width: 70px;
-      height: 34px;
-    }
+  .toggle-switch {
+    position: relative;
+    width: 70px;
+    height: 34px;
+  }
 
-    .toggle-switch input {
-      display: none;
-    }
+  .toggle-switch input {
+    display: none;
+  }
 
-    .slider {
-      position: absolute;
-      cursor: pointer;
-      background-color: #ccc;
-      border-radius: 34px;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      transition: 0.4s;
-    }
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    background-color: #444; /* ACES dark grey/black tone */
+    border-radius: 34px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: 0.4s;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.25); /* subtle shadow */
+  }
 
-    .slider:before {
-      position: absolute;
-      content: "EN";
-      height: 26px;
-      width: 26px;
-      left: 4px;
-      bottom: 4px;
-      background-color: white;
-      color: #1e73be;
-      font-size: 12px;
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      transition: 0.4s;
-    }
+  .slider:before {
+    position: absolute;
+    content: "EN";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    color: #b30000; /* ACES red */
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: 0.4s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* subtle shadow on knob */
+  }
 
-    input:checked + .slider {
-      background-color: #1e73be;
-    }
+  /* When switched to Spanish */
+  input:checked + .slider {
+    background-color: #b30000; /* ACES red */
+  }
 
-    input:checked + .slider:before {
-      transform: translateX(36px);
-      content: "ES";
-      color: #1e73be;
-    }
-  </style>
+  input:checked + .slider:before {
+    transform: translateX(36px);
+    content: "ES";
+    color: #b30000; /* ACES red text */
+  }
+
+  /* Fade animation for content sections */
+  .fade-section {
+    transition: opacity 0.3s ease;
+  }
+</style>
+
 </head>
 
 <body>
