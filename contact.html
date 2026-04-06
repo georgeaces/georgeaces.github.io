@@ -25,14 +25,19 @@
   .slider {
     position: absolute;
     cursor: pointer;
-    background-color: #444; /* ACES dark grey/black tone */
+    background-color: #000; /* ACES black */
     border-radius: 34px;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     transition: 0.4s;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.25); /* subtle shadow */
+    
+    /* Thin ACES red border */
+    border: 2px solid #b30000;
+
+    /* Subtle glow */
+    box-shadow: 0 0 6px rgba(179, 0, 0, 0.4);
   }
 
   .slider:before {
@@ -43,7 +48,7 @@
     left: 4px;
     bottom: 4px;
     background-color: white;
-    color: #b30000; /* ACES red */
+    color: #b30000; /* ACES red text */
     font-size: 12px;
     font-weight: bold;
     display: flex;
@@ -51,18 +56,21 @@
     justify-content: center;
     border-radius: 50%;
     transition: 0.4s;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* subtle shadow on knob */
+
+    /* Subtle glow on knob */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.25);
   }
 
   /* When switched to Spanish */
   input:checked + .slider {
     background-color: #b30000; /* ACES red */
+    box-shadow: 0 0 8px rgba(179, 0, 0, 0.6); /* stronger glow */
   }
 
   input:checked + .slider:before {
     transform: translateX(36px);
     content: "ES";
-    color: #b30000; /* ACES red text */
+    color: #b30000;
   }
 
   /* Fade animation for content sections */
