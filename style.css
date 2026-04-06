@@ -178,9 +178,13 @@ section h2::after {
 }
 
 /* TRUST SECTION */
+/* TRUST SECTION */
 .trust {
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* horizontally center everything */
     text-align: center;
-    width: 100%;
 }
 
 .trust h2 {
@@ -189,30 +193,30 @@ section h2::after {
     color: #111;
 }
 
-/* FINAL OVERRIDE — GUARANTEED CENTERING */
+/* Badge */
 .trust-badge {
     width: 200px;
-    display: block !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    max-width: 100%;
+    margin: 20px 0;
+    display: block;
 }
 
+/* Text under badge */
 .trust p {
     font-size: 1.1rem;
     color: #333;
 }
 
+/* QR Code */
 .trust-qr {
     text-align: center;
 }
 
 .trust-qr-img {
-    display: block !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    margin-top: 10px;
+    width: 160px;
+    max-width: 60vw;
+    display: block;
+    margin: 10px auto 0;
 }
 
 /* FOOTER */
