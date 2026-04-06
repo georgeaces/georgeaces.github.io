@@ -225,48 +225,37 @@
 function toggleLanguage() {
   const english = document.getElementById("english");
   const spanish = document.getElementById("spanish");
-  const englishAgents = document.getElementById("english-agents");
-  const spanishAgents = document.getElementById("spanish-agents");
   const toggle = document.getElementById("langToggle");
 
   if (toggle.checked) {
     // Fade out English
     english.style.opacity = 0;
-    englishAgents.style.opacity = 0;
 
     setTimeout(() => {
       english.style.display = "none";
-      englishAgents.style.display = "none";
 
       spanish.style.display = "block";
-      spanishAgents.style.display = "block";
-
       setTimeout(() => {
         spanish.style.opacity = 1;
-        spanishAgents.style.opacity = 1;
       }, 50);
     }, 300);
 
   } else {
     // Fade out Spanish
     spanish.style.opacity = 0;
-    spanishAgents.style.opacity = 0;
 
     setTimeout(() => {
       spanish.style.display = "none";
-      spanishAgents.style.display = "none";
 
       english.style.display = "block";
-      englishAgents.style.display = "block";
-
       setTimeout(() => {
         english.style.opacity = 1;
-        englishAgents.style.opacity = 1;
       }, 50);
     }, 300);
   }
 }
 </script>
+
 
 </div>
 
