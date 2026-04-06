@@ -86,6 +86,12 @@
 
 <!-- Language Toggle -->
 <button onclick="toggleLanguage()" id="langButton">Español</button>
+<div class="toggle-wrapper">
+  <label class="toggle-switch">
+    <input type="checkbox" id="langToggle" onclick="toggleLanguage()">
+    <span class="slider"></span>
+  </label>
+</div>
 
 <!-- English Version -->
 <div id="english">
@@ -97,6 +103,12 @@
 
   <p>Available by call, text, or email.<br>
   Disponible por llamada, texto o correo electrónico.</p>
+</div>
+<div class="toggle-wrapper">
+  <label class="toggle-switch">
+    <input type="checkbox" id="langToggle" onclick="toggleLanguage()">
+    <span class="slider"></span>
+  </label>
 </div>
 
 <!-- Spanish Version -->
@@ -115,19 +127,18 @@
 function toggleLanguage() {
   const english = document.getElementById("english");
   const spanish = document.getElementById("spanish");
-  const button = document.getElementById("langButton");
+  const toggle = document.getElementById("langToggle");
 
-  if (english.style.display === "none") {
-    english.style.display = "block";
-    spanish.style.display = "none";
-    button.textContent = "Español";
-  } else {
+  if (toggle.checked) {
     english.style.display = "none";
     spanish.style.display = "block";
-    button.textContent = "English";
+  } else {
+    english.style.display = "block";
+    spanish.style.display = "none";
   }
 }
 </script>
+
 
 </div>
 
