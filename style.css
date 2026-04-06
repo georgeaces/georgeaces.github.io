@@ -44,7 +44,9 @@ section h2::after {
 
 .hero-logo {
     width: 180px;
-    margin-bottom: 25px;
+    height: auto;
+    display: block;
+    margin: 0 auto 25px auto;
 }
 
 .hero h1 {
@@ -195,10 +197,6 @@ section h2::after {
 }
 
 /* QR Code */
-.trust-qr {
-    text-align: center;
-}
-
 .trust-qr-img {
     width: 160px;
     max-width: 60vw;
