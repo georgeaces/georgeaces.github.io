@@ -179,18 +179,22 @@ section h2::after {
 
 /* TRUST SECTION */
 .trust {
-    background: #f7f7f7;
-    padding: 60px 20px;
     text-align: center;
+    width: 100%;
+}
+
+.trust-badge {
+    display: block;
+    margin: 0 auto;
 }
 
 .trust-qr {
-    margin-top: 25px;
+    text-align: center;
 }
 
 .trust-qr-img {
-    width: 160px;
-    margin-top: 10px;
+    display: block;
+    margin: 10px auto;
 }
 
 .trust h2 {
