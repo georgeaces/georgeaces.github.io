@@ -84,8 +84,7 @@
 <div class="container">
 <h1>Contact Us</h1>
 
-<!-- Language Toggle -->
-<button onclick="toggleLanguage()" id="langButton">Español</button>
+<!-- 🔵 Bilingual Toggle Switch -->
 <div class="toggle-wrapper">
   <label class="toggle-switch">
     <input type="checkbox" id="langToggle" onclick="toggleLanguage()">
@@ -93,7 +92,7 @@
   </label>
 </div>
 
-<!-- English Version -->
+<!-- 🇺🇸 English Content -->
 <div id="english">
   <p>We are here to help with all your insurance needs. Proudly offering bilingual support (English & Spanish).</p>
 
@@ -104,14 +103,8 @@
   <p>Available by call, text, or email.<br>
   Disponible por llamada, texto o correo electrónico.</p>
 </div>
-<div class="toggle-wrapper">
-  <label class="toggle-switch">
-    <input type="checkbox" id="langToggle" onclick="toggleLanguage()">
-    <span class="slider"></span>
-  </label>
-</div>
 
-<!-- Spanish Version -->
+<!-- 🇲🇽 Spanish Content -->
 <div id="spanish" style="display:none;">
   <p>Estamos aquí para ayudarle con todas sus necesidades de seguro. Orgullosamente ofrecemos apoyo bilingüe (Inglés y Español).</p>
 
@@ -123,6 +116,7 @@
   Available by call, text, or email.</p>
 </div>
 
+<!-- 🔁 Toggle Script -->
 <script>
 function toggleLanguage() {
   const english = document.getElementById("english");
@@ -139,8 +133,64 @@ function toggleLanguage() {
 }
 </script>
 
-
 </div>
+<style>
+  .toggle-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+
+  .toggle-switch {
+    position: relative;
+    width: 70px;
+    height: 34px;
+  }
+
+  .toggle-switch input {
+    display: none;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    background-color: #ccc;
+    border-radius: 34px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: 0.4s;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "EN";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    color: #1e73be;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: 0.4s;
+  }
+
+  input:checked + .slider {
+    background-color: #1e73be;
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(36px);
+    content: "ES";
+    color: #1e73be;
+  }
+</style>
 
 </body>
 </html>
