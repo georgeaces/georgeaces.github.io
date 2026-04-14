@@ -145,8 +145,8 @@ section h2::after {
 }
 
 .service-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 18px rgba(212, 0, 0, 0.35); /* ACES red glow */
+  transform: translateY(-6px);
+  box-shadow: 0 10px 22px rgba(212, 0, 0, 0.45);
 }
 
 .service-box h3 {
