@@ -112,33 +112,28 @@ section h2::after {
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 40px;
-  justify-items: center;
-  align-items: start;
+  gap: 25px;
+  padding: 20px;
 }
 
 .service-box {
-  background-color: #fafafa;
-  border: 1px solid #e0e0e0;
+  text-align: center;
+  padding: 20px;
+  background: #ffffff;
   border-radius: 10px;
-  padding: 25px;
-  width: 220px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .service-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
 }
 
 .service-icon {
-  width: 50px;
-  height: 50px;
-  margin-bottom: 15px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  width: 55px;
+  height: 55px;
+  margin-bottom: 12px;
 }
 
 .service-box h3 {
