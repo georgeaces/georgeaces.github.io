@@ -193,12 +193,19 @@ section h2::after {
     align-items: center;
 }
 
-/* LOGO */
+/* LOGO WITH UNDERLINE + DROP SHADOW */
 .header-logo {
-    font-size: 1.6rem;
-    font-weight: bold;
-    color: #000;
-    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding-bottom: 6px;
+    border-bottom: 3px solid #d40000;
+}
+
+.header-logo-img {
+    height: 65px;
+    width: auto;
+    display: block;
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.25));
 }
 
 /* DESKTOP NAV */
@@ -300,18 +307,4 @@ section h2::after {
     .hamburger {
         display: block;
     }
-}
-
-/* HEADER LOGO IMAGE — MEDIUM SIZE + ACES RED UNDERLINE */
-.header-logo {
-    display: flex;
-    align-items: center;
-    padding-bottom: 6px; /* space above underline */
-    border-bottom: 3px solid #d40000; /* thin ACES red underline */
-}
-
-.header-logo-img {
-    height: 65px; /* medium size */
-    width: auto;
-    display: block;
 }
