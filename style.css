@@ -301,3 +301,17 @@ section h2::after {
         display: block;
     }
 }
+
+/* HEADER LOGO IMAGE — MEDIUM SIZE + ACES RED UNDERLINE */
+.header-logo {
+    display: flex;
+    align-items: center;
+    padding-bottom: 6px; /* space above underline */
+    border-bottom: 3px solid #d40000; /* thin ACES red underline */
+}
+
+.header-logo-img {
+    height: 65px; /* medium size */
+    width: auto;
+    display: block;
+}
