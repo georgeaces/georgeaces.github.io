@@ -355,3 +355,66 @@ section h2::after {
         display: block;
     }
 }
+
+/* ============================
+   BILINGUAL TOGGLE SWITCH
+============================ */
+.toggle-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.toggle-switch {
+    position: relative;
+    width: 70px;
+    height: 34px;
+}
+
+.toggle-switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    background-color: #000;
+    border-radius: 34px;
+    top: 0; left: 0; right: 0; bottom: 0;
+    transition: 0.4s;
+    border: 2px solid #d40000;
+    box-shadow: 0 0 6px rgba(212,0,0,0.4);
+}
+
+.slider:before {
+    position: absolute;
+    content: "EN";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    color: #d40000;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: 0.4s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+}
+
+input:checked + .slider {
+    background-color: #d40000;
+    box-shadow: 0 0 8px rgba(212,0,0,0.6);
+}
+
+input:checked + .slider:before {
+    transform: translateX(36px);
+    content: "ES";
+}
+
+.fade-section {
+    transition: opacity 0.3s ease;
+}
