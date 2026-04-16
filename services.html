@@ -13,19 +13,17 @@
 <header class="aces-header">
   <div class="header-inner">
 
-    <!-- Logo -->
     <a href="index.html" class="header-logo">
       <img src="image2.png" alt="ACES Insurance Services Logo" class="header-logo-img">
     </a>
 
-    <!-- Desktop Navigation -->
     <nav class="nav-menu">
       <div class="nav-item dropdown">
         <span class="nav-link">Services ▾</span>
         <div class="dropdown-menu">
-          <a href="services.html#commercial">Commercial Insurance</a>
-          <a href="services.html#personal">Personal Insurance</a>
-          <a href="services.html#specialty">Specialty Lines</a>
+          <a href="#commercial">Commercial Insurance</a>
+          <a href="#personal">Personal Insurance</a>
+          <a href="#specialty">Specialty Lines</a>
         </div>
       </div>
 
@@ -43,20 +41,17 @@
       <a class="nav-link" href="contact.html">Contact</a>
     </nav>
 
-    <!-- Mobile Hamburger -->
     <div class="hamburger" onclick="toggleMobileMenu()">☰</div>
-
   </div>
 
-  <!-- Mobile Menu -->
   <div id="mobileMenu" class="mobile-menu">
     <a href="index.html">Home</a>
 
     <button class="mobile-dropdown-btn" onclick="toggleMobileDropdown(this)">Services ▾</button>
     <div class="mobile-dropdown-content">
-      <a href="services.html#commercial">Commercial Insurance</a>
-      <a href="services.html#personal">Personal Insurance</a>
-      <a href="services.html#specialty">Specialty Lines</a>
+      <a href="#commercial">Commercial Insurance</a>
+      <a href="#personal">Personal Insurance</a>
+      <a href="#specialty">Specialty Lines</a>
     </div>
 
     <button class="mobile-dropdown-btn" onclick="toggleMobileDropdown(this)">Applications ▾</button>
@@ -72,20 +67,52 @@
   </div>
 </header>
 
-<!-- PAGE CONTENT -->
+<!-- ⭐ SERVICES PAGE CONTENT -->
 <section class="about">
     <h2>Our Services</h2>
-    <p>ACES Insurance Services provides a wide range of personal and commercial insurance solutions.</p>
+    <p>ACES Insurance Services provides personal, commercial, and specialty insurance solutions with bilingual support.</p>
+</section>
 
-    <ul style="max-width:600px; margin:auto; text-align:left; font-size:1.1rem; line-height:1.6;">
-        <li>Auto Insurance</li>
-        <li>Homeowners Insurance</li>
-        <li>Renters Insurance</li>
-        <li>Commercial General Liability</li>
-        <li>Workers Compensation</li>
-        <li>Commercial Auto</li>
-        <li>Bonding</li>
-    </ul>
+<!-- ⭐ SERVICES GRID -->
+<section id="services" style="padding: 40px 20px;">
+  <div class="services-grid">
+
+    <!-- Life -->
+    <div class="service-box">
+      <img src="https://raw.githubusercontent.com/insacestx/insacestx.github.io/main/icon-life-aces.png" class="service-icon" alt="Life Insurance Icon">
+      <h3>Life Insurance</h3>
+      <p>Protect your family’s future with reliable coverage options.</p>
+    </div>
+
+    <!-- Commercial -->
+    <div class="service-box" id="commercial">
+      <img src="https://raw.githubusercontent.com/insacestx/insacestx.github.io/main/icon-commercial-aces.png" class="service-icon" alt="Commercial Insurance Icon">
+      <h3>Commercial Insurance</h3>
+      <p>Coverage designed to protect your business, employees, and assets.</p>
+    </div>
+
+    <!-- Property -->
+    <div class="service-box" id="personal">
+      <img src="https://raw.githubusercontent.com/insacestx/insacestx.github.io/main/icon-property-aces.png" class="service-icon" alt="Property Insurance Icon">
+      <h3>Property Insurance</h3>
+      <p>Homeowners, renters, and property protection for peace of mind.</p>
+    </div>
+
+    <!-- Auto -->
+    <div class="service-box">
+      <img src="https://raw.githubusercontent.com/insacestx/insacestx.github.io/main/icon-auto-aces.png" class="service-icon" alt="Auto Insurance Icon">
+      <h3>Auto Insurance</h3>
+      <p>Reliable coverage for personal and commercial vehicles.</p>
+    </div>
+
+    <!-- Specialty -->
+    <div class="service-box" id="specialty">
+      <img src="https://raw.githubusercontent.com/insacestx/insacestx.github.io/main/icon-specialty-aces.png" class="service-icon" alt="Specialty Lines Icon">
+      <h3>Specialty Lines</h3>
+      <p>Bonding, contractors, and unique coverage tailored to your needs.</p>
+    </div>
+
+  </div>
 </section>
 
 <!-- FOOTER -->
