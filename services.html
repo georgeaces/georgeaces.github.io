@@ -1,276 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Services - ACES Insurance Services</title>
-    <link rel="stylesheet" href="style.css?v=3">
+    <link rel="stylesheet" href="styles.css" />
 
-    <!-- 🔵 Toggle + Fade Styling -->
     <style>
-        .toggle-wrapper {
-            display: flex;
-            justify-content: center;
-            margin: 20px 0;
-        }
-
-        .toggle-switch {
-            position: relative;
-            width: 70px;
-            height: 34px;
-        }
-
-        .toggle-switch input { display: none; }
-
-        .slider {
-            position: absolute;
-            cursor: pointer;
-            background-color: #000;
-            border-radius: 34px;
-            top: 0; left: 0; right: 0; bottom: 0;
-            transition: 0.4s;
-            border: 2px solid #b30000;
-            box-shadow: 0 0 6px rgba(179,0,0,0.4);
-        }
-
-        .slider:before {
-            position: absolute;
-            content: "EN";
-            height: 26px;
-            width: 26px;
-            left: 4px;
-            bottom: 4px;
-            background-color: white;
-            color: #b30000;
-            font-size: 12px;
-            font-weight: bold;
+        /* Header layout fix for toggle placement */
+        .header-container {
             display: flex;
             align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            transition: 0.4s;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+            justify-content: space-between;
+            padding: 12px 20px;
         }
 
-        input:checked + .slider {
-            background-color: #b30000;
-            box-shadow: 0 0 8px rgba(179,0,0,0.6);
+        .left-header-group {
+            display: flex;
+            align-items: center;
+            gap: 20px;
         }
 
-        input:checked + .slider:before {
-            transform: translateX(36px);
-            content: "ES";
+        /* Dropdown hover delay fix */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background: white;
+            padding: 10px 0;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 999;
         }
 
-        .fade-section {
-            transition: opacity 0.3s ease;
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        /* Service grid layout */
+        .services-section {
+            padding: 40px 20px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .service-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #ddd;
+            transition: 0.2s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            border-color: #d40000;
+        }
+
+        .service-card img {
+            width: 70px;
+            height: 70px;
+            margin-bottom: 12px;
+        }
+
+        /* Hidden sections for filtering */
+        .hidden {
+            display: none !important;
         }
     </style>
 </head>
 
 <body>
 
-<!-- 🔴 ACES GLOBAL HEADER -->
-<header class="aces-header">
-  <div class="header-inner">
+    <!-- HEADER -->
+    <header>
+        <div class="header-container">
 
-    <a href="index.html" class="header-logo">
-      <img src="image2.png" alt="ACES Insurance Services Logo" class="header-logo-img">
-    </a>
+            <!-- LEFT SIDE: Logo + Toggle -->
+            <div class="left-header-group">
+                <a href="index.html">
+                    <img src="assets/logo.png" alt="ACES Insurance Services" style="height: 55px;">
+                </a>
 
-    <nav class="nav-menu">
-      <div class="nav-item dropdown">
-        <span class="nav-link">Services ▾</span>
-        <div class="dropdown-menu">
-          <a href="#commercial">Commercial Insurance</a>
-          <a href="#personal">Personal Insurance</a>
-          <a href="#specialty">Specialty Lines</a>
+                <!-- Bilingual Toggle (your current design) -->
+                <div id="language-toggle">
+                    <button id="en-btn">EN</button> |
+                    <button id="es-btn">ES</button>
+                </div>
+            </div>
+
+            <!-- RIGHT SIDE: Navigation -->
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+
+                    <li class="dropdown">
+                        <a href="#">Services ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="services.html?type=personal">Personal Lines</a></li>
+                            <li><a href="services.html?type=commercial">Commercial Lines</a></li>
+                            <li><a href="services.html?type=property">Property Lines</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="applications.html">Applications</a></li>
+                    <li><a href="coi.html">COI Request</a></li>
+                    <li><a href="claims.html">Claims</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
         </div>
-      </div>
+    </header>
 
-      <div class="nav-item dropdown">
-        <span class="nav-link">Applications ▾</span>
-        <div class="dropdown-menu">
-          <a href="applications.html#commercial">Commercial Apps</a>
-          <a href="applications.html#personal">Personal Apps</a>
+    <!-- PAGE TITLE -->
+    <section class="page-title">
+        <h1>Our Services</h1>
+        <p>Select the insurance solutions that fit your needs.</p>
+    </section>
+
+    <!-- PERSONAL LINES -->
+    <section id="personal-section" class="services-section">
+        <h2>Personal Lines</h2>
+        <div class="services-grid">
+
+            <div class="service-card">
+                <img src="assets/icons/home.png" alt="Home Insurance">
+                <h3>Home Insurance</h3>
+            </div>
+
+            <div class="service-card">
+                <img src="assets/icons/rental.png" alt="Rental Insurance">
+                <h3>Rental Insurance</h3>
+            </div>
+
+            <div class="service-card">
+                <img src="assets/icons/rv.png" alt="RV Insurance">
+                <h3>RV Insurance</h3>
+            </div>
+
+            <div class="service-card">
+                <img src="assets/icons/motorcycle.png" alt="Motorcycle Insurance">
+                <h3>Motorcycle Insurance</h3>
+            </div>
+
+            <div class="service-card">
+                <img src="assets/icons/golfcart.png" alt="Golf Cart Insurance">
+                <h3>Golf Cart Insurance</h3>
+            </div>
+
+            <div class="service-card">
+                <img src="assets/icons/auto.png" alt="Auto Insurance">
+                <h3>Auto Insurance</h3>
+            </div>
+
+            <div class="service-card">
+                <img src="assets/icons/life.png" alt="Life Insurance">
+                <h3>Life Insurance</h3>
+            </div>
+
         </div>
-      </div>
+    </section>
 
-      <a class="nav-link" href="coi.html">COI Request</a>
-      <a class="nav-link" href="claims.html">Claims</a>
-      <a class="nav-link" href="about.html">About</a>
-      <a class="nav-link" href="contact.html">Contact</a>
-    </nav>
+    <!-- COMMERCIAL LINES -->
+    <section id="commercial-section" class="services-section">
+        <h2>Commercial Lines</h2>
+        <div class="services-grid">
 
-    <div class="hamburger" onclick="toggleMobileMenu()">☰</div>
-  </div>
+            <div class="service-card">
+                <img src="assets/icons/liability.png" alt="General Liability">
+                <h3>General Liability</h3>
+            </div>
 
-  <div id="mobileMenu" class="mobile-menu">
-    <a href="index.html">Home</a>
+            <div class="service-card">
+                <img src="assets/icons/commercialauto.png" alt="Commercial Auto">
+                <h3>Commercial Auto</h3>
+            </div>
 
-    <button class="mobile-dropdown-btn" onclick="toggleMobileDropdown(this)">Services ▾</button>
-    <div class="mobile-dropdown-content">
-      <a href="#commercial">Commercial Insurance</a>
-      <a href="#personal">Personal Insurance</a>
-      <a href="#specialty">Specialty Lines</a>
-    </div>
+            <div class="service-card">
+                <img src="assets/icons/workerscomp.png" alt="Workers Comp">
+                <h3>Workers Comp</h3>
+            </div>
 
-    <button class="mobile-dropdown-btn" onclick="toggleMobileDropdown(this)">Applications ▾</button>
-    <div class="mobile-dropdown-content">
-      <a href="applications.html#commercial">Commercial Apps</a>
-      <a href="applications.html#personal">Personal Apps</a>
-    </div>
+            <div class="service-card">
+                <img src="assets/icons/bond.png" alt="Bonds">
+                <h3>Bonds</h3>
+            </div>
 
-    <a href="coi.html">COI Request</a>
-    <a href="claims.html">Claims</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </div>
-</header>
+            <div class="service-card">
+                <img src="assets/icons/specialty.png" alt="Specialty Lines">
+                <h3>Specialty Lines</h3>
+            </div>
 
-<!-- 🔵 LANGUAGE TOGGLE -->
-<div class="toggle-wrapper">
-  <label class="toggle-switch">
-    <input type="checkbox" id="langToggle" onclick="toggleLanguage()">
-    <span class="slider"></span>
-  </label>
-</div>
+        </div>
+    </section>
 
-<!-- 🇺🇸 ENGLISH SECTION -->
-<div id="english" class="fade-section" style="opacity:1;">
+    <!-- PROPERTY LINES -->
+    <section id="property-section" class="services-section">
+        <h2>Property Lines</h2>
+        <div class="services-grid">
 
-<section class="about">
-    <h2>Our Services</h2>
-    <p>ACES Insurance Services provides personal, commercial, and specialty insurance solutions with bilingual support.</p>
-</section>
+            <div class="service-card">
+                <img src="assets/icons/home.png" alt="Home Insurance">
+                <h3>Home Insurance</h3>
+            </div>
 
-<section id="services" style="padding: 40px 20px;">
-  <div class="services-grid">
+            <div class="service-card">
+                <img src="assets/icons/rental.png" alt="Rental Insurance">
+                <h3>Rental Insurance</h3>
+            </div>
 
-    <div class="service-box">
-      <img src="https://raw.githubusercontent.com/insacestx/insacestx.github.io/main/icon-life-aces.png" class="service-icon">
-      <h3>Life Insurance</h3>
-      <p>Protect your family’s future with reliable coverage options.</p>
-    </div>
+            <div class="service-card">
+                <img src="assets/icons/condo.png" alt="Condo Insurance">
+                <h3>Condo Insurance</h3>
+            </div>
 
-    <div class="service-box" id="commercial">
-      <img src="https://raw.githubusercontent.com/insacestx/insacestx.github.io/main/icon-commercial-aces.png" class="service-icon">
-      <h3>Commercial Insurance</h3>
-      <p>Coverage designed to protect your business, employees, and assets.</p>
-    </div>
+            <div class="service-card">
+                <img src="assets/icons/landlord.png" alt="Landlord Insurance">
+                <h3>Landlord Insurance</h3>
+            </div>
 
-    <div class="service-box" id="personal">
-      <img src="https://raw.githubusercontent.com/insacestx/insacestx.github.io/main/icon-property-aces.png" class="service-icon">
-      <h3>Property Insurance</h3>
-      <p>Homeowners, renters, and property protection for peace of mind.</p>
-    </div>
+            <div class="service-card">
+                <img src="assets/icons/flood.png" alt="Flood Insurance">
+                <h3>Flood Insurance</h3>
+            </div>
 
-    <div class="service-box">
-      <img src="https://raw.githubusercontent.com/insacestx/insacestx.github.io/main/icon-auto-aces.png" class="service-icon">
-      <h3>Auto Insurance</h3>
-      <p>Reliable coverage for personal and commercial vehicles.</p>
-    </div>
+            <div class="service-card">
+                <img src="assets/icons/windstorm.png" alt="Windstorm Insurance">
+                <h3>Windstorm Insurance</h3>
+            </div>
 
-    <div class="service-box" id="specialty">
-      <img src="https://raw.githubusercontent.com/insacestx/insacestx.github.io/main/icon-specialty-aces.png" class="service-icon">
-      <h3>Specialty Lines</h3>
-      <p>Bonding, contractors, and unique coverage tailored to your needs.</p>
-    </div>
+        </div>
+    </section>
 
-  </div>
-</section>
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 ACES Insurance Services. All Rights Reserved.</p>
+    </footer>
 
-</div>
+    <!-- DROPDOWN DELAY SCRIPT -->
+    <script>
+        let hideTimeout;
 
-<!-- 🇲🇽 SPANISH SECTION -->
-<div id="spanish" class="fade-section" style="display:none; opacity:0;">
+        document.querySelectorAll('.dropdown').forEach(drop => {
+            const menu = drop.querySelector('.dropdown-menu');
 
-<section class="about">
-    <h2>Servicios</h2>
-    <p>ACES Insurance Services ofrece soluciones de seguros personales, comerciales y especializados con apoyo bilingüe.</p>
-</section>
+            drop.addEventListener('mouseenter', () => {
+                clearTimeout(hideTimeout);
+                menu.style.display = 'block';
+            });
 
-<section id="services" style="padding: 40px 20px;">
-  <div class="services-grid">
+            drop.addEventListener('mouseleave', () => {
+                hideTimeout = setTimeout(() => {
+                    menu.style.display = 'none';
+                }, 250);
+            });
+        });
+    </script>
 
-    <div class="service-box">
-      <img src="https://raw.githubusercontent.com/insacestx/insacestx.github.io/main/icon-life-aces.png" class="service-icon">
-      <h3>Seguro de Vida</h3>
-      <p>Proteja el futuro de su familia con opciones confiables.</p>
-    </div>
+    <!-- CATEGORY FILTERING SCRIPT -->
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const type = params.get("type");
 
-    <div class="service-box">
-      <img src="https://raw.githubusercontent.com/insacestx/insacestx.github.io/main/icon-commercial-aces.png" class="service-icon">
-      <h3>Seguro Comercial</h3>
-      <p>Cobertura diseñada para proteger su negocio, empleados y bienes.</p>
-    </div>
+        const personal = document.getElementById("personal-section");
+        const commercial = document.getElementById("commercial-section");
+        const property = document.getElementById("property-section");
 
-    <div class="service-box">
-      <img src="https://raw.githubusercontent.com/insacestx/insacestx.github.io/main/icon-property-aces.png" class="service-icon">
-      <h3>Seguro de Propiedad</h3>
-      <p>Protección para propietarios, inquilinos y viviendas.</p>
-    </div>
+        if (type === "personal") {
+            commercial.classList.add("hidden");
+            property.classList.add("hidden");
+        }
 
-    <div class="service-box">
-      <img src="https://raw.githubusercontent.com/insacestx/insacestx.github.io/main/icon-auto-aces.png" class="service-icon">
-      <h3>Seguro de Auto</h3>
-      <p>Cobertura confiable para vehículos personales y comerciales.</p>
-    </div>
+        if (type === "commercial") {
+            personal.classList.add("hidden");
+            property.classList.add("hidden");
+        }
 
-    <div class="service-box">
-      <img src="https://raw.githubusercontent.com/insacestx/insacestx.github.io/main/icon-specialty-aces.png" class="service-icon">
-      <h3>Líneas Especializadas</h3>
-      <p>Fianzas, contratistas y coberturas únicas adaptadas a sus necesidades.</p>
-    </div>
-
-  </div>
-</section>
-
-</div>
-
-<!-- 🔁 LANGUAGE TOGGLE SCRIPT -->
-<script>
-function toggleLanguage() {
-  const english = document.getElementById("english");
-  const spanish = document.getElementById("spanish");
-  const toggle = document.getElementById("langToggle");
-
-  if (toggle.checked) {
-    english.style.opacity = 0;
-    setTimeout(() => {
-      english.style.display = "none";
-      spanish.style.display = "block";
-      setTimeout(() => { spanish.style.opacity = 1; }, 50);
-    }, 300);
-  } else {
-    spanish.style.opacity = 0;
-    setTimeout(() => {
-      spanish.style.display = "none";
-      english.style.display = "block";
-      setTimeout(() => { english.style.opacity = 1; }, 50);
-    }, 300);
-  }
-}
-</script>
-
-<!-- 🔴 MOBILE MENU SCRIPT -->
-<script>
-function toggleMobileMenu() {
-  const menu = document.getElementById("mobileMenu");
-  menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
-}
-
-function toggleMobileDropdown(button) {
-  const content = button.nextElementSibling;
-  content.style.display = (content.style.display === "block") ? "none" : "block";
-}
-</script>
-
-<!-- FOOTER -->
-<footer class="footer">
-    <img src="image2.png" alt="ACES Logo" class="footer-logo">
-    <p>© 2026 ACES Insurance Services</p>
-</footer>
+        if (type === "property") {
+            personal.classList.add("hidden");
+            commercial.classList.add("hidden");
+        }
+    </script>
 
 </body>
 </html>
