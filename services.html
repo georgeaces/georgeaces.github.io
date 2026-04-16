@@ -5,6 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services - ACES Insurance Services</title>
     <link rel="stylesheet" href="style.css?v=3">
+
+    <!-- 🔵 Toggle + Fade Styling -->
+    <style>
+        .toggle-wrapper {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .toggle-switch {
+            position: relative;
+            width: 70px;
+            height: 34px;
+        }
+
+        .toggle-switch input { display: none; }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            background-color: #000;
+            border-radius: 34px;
+            top: 0; left: 0; right: 0; bottom: 0;
+            transition: 0.4s;
+            border: 2px solid #b30000;
+            box-shadow: 0 0 6px rgba(179,0,0,0.4);
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "EN";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            color: #b30000;
+            font-size: 12px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: 0.4s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+        }
+
+        input:checked + .slider {
+            background-color: #b30000;
+            box-shadow: 0 0 8px rgba(179,0,0,0.6);
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(36px);
+            content: "ES";
+        }
+
+        .fade-section {
+            transition: opacity 0.3s ease;
+        }
+    </style>
 </head>
 
 <body>
@@ -67,47 +128,51 @@
   </div>
 </header>
 
-<!-- ⭐ SERVICES PAGE CONTENT -->
+<!-- 🔵 LANGUAGE TOGGLE -->
+<div class="toggle-wrapper">
+  <label class="toggle-switch">
+    <input type="checkbox" id="langToggle" onclick="toggleLanguage()">
+    <span class="slider"></span>
+  </label>
+</div>
+
+<!-- 🇺🇸 ENGLISH SECTION -->
+<div id="english" class="fade-section" style="opacity:1;">
+
 <section class="about">
     <h2>Our Services</h2>
     <p>ACES Insurance Services provides personal, commercial, and specialty insurance solutions with bilingual support.</p>
 </section>
 
-<!-- ⭐ SERVICES GRID -->
 <section id="services" style="padding: 40px 20px;">
   <div class="services-grid">
 
-    <!-- Life -->
     <div class="service-box">
-      <img src="https://raw.githubusercontent.com/insacestx/insacestx.github.io/main/icon-life-aces.png" class="service-icon" alt="Life Insurance Icon">
+      <img src="https://raw.githubusercontent.com/insacestx/insacestx.github.io/main/icon-life-aces.png" class="service-icon">
       <h3>Life Insurance</h3>
       <p>Protect your family’s future with reliable coverage options.</p>
     </div>
 
-    <!-- Commercial -->
     <div class="service-box" id="commercial">
-      <img src="https://raw.githubusercontent.com/insacestx/insacestx.github.io/main/icon-commercial-aces.png" class="service-icon" alt="Commercial Insurance Icon">
+      <img src="https://raw.githubusercontent.com/insacestx/insacestx.github.io/main/icon-commercial-aces.png" class="service-icon">
       <h3>Commercial Insurance</h3>
       <p>Coverage designed to protect your business, employees, and assets.</p>
     </div>
 
-    <!-- Property -->
     <div class="service-box" id="personal">
-      <img src="https://raw.githubusercontent.com/insacestx/insacestx.github.io/main/icon-property-aces.png" class="service-icon" alt="Property Insurance Icon">
+      <img src="https://raw.githubusercontent.com/insacestx/insacestx.github.io/main/icon-property-aces.png" class="service-icon">
       <h3>Property Insurance</h3>
       <p>Homeowners, renters, and property protection for peace of mind.</p>
     </div>
 
-    <!-- Auto -->
     <div class="service-box">
-      <img src="https://raw.githubusercontent.com/insacestx/insacestx.github.io/main/icon-auto-aces.png" class="service-icon" alt="Auto Insurance Icon">
+      <img src="https://raw.githubusercontent.com/insacestx/insacestx.github.io/main/icon-auto-aces.png" class="service-icon">
       <h3>Auto Insurance</h3>
       <p>Reliable coverage for personal and commercial vehicles.</p>
     </div>
 
-    <!-- Specialty -->
     <div class="service-box" id="specialty">
-      <img src="https://raw.githubusercontent.com/insacestx/insacestx.github.io/main/icon-specialty-aces.png" class="service-icon" alt="Specialty Lines Icon">
+      <img src="https://raw.githubusercontent.com/insacestx/insacestx.github.io/main/icon-specialty-aces.png" class="service-icon">
       <h3>Specialty Lines</h3>
       <p>Bonding, contractors, and unique coverage tailored to your needs.</p>
     </div>
@@ -115,24 +180,97 @@
   </div>
 </section>
 
+</div>
+
+<!-- 🇲🇽 SPANISH SECTION -->
+<div id="spanish" class="fade-section" style="display:none; opacity:0;">
+
+<section class="about">
+    <h2>Servicios</h2>
+    <p>ACES Insurance Services ofrece soluciones de seguros personales, comerciales y especializados con apoyo bilingüe.</p>
+</section>
+
+<section id="services" style="padding: 40px 20px;">
+  <div class="services-grid">
+
+    <div class="service-box">
+      <img src="https://raw.githubusercontent.com/insacestx/insacestx.github.io/main/icon-life-aces.png" class="service-icon">
+      <h3>Seguro de Vida</h3>
+      <p>Proteja el futuro de su familia con opciones confiables.</p>
+    </div>
+
+    <div class="service-box">
+      <img src="https://raw.githubusercontent.com/insacestx/insacestx.github.io/main/icon-commercial-aces.png" class="service-icon">
+      <h3>Seguro Comercial</h3>
+      <p>Cobertura diseñada para proteger su negocio, empleados y bienes.</p>
+    </div>
+
+    <div class="service-box">
+      <img src="https://raw.githubusercontent.com/insacestx/insacestx.github.io/main/icon-property-aces.png" class="service-icon">
+      <h3>Seguro de Propiedad</h3>
+      <p>Protección para propietarios, inquilinos y viviendas.</p>
+    </div>
+
+    <div class="service-box">
+      <img src="https://raw.githubusercontent.com/insacestx/insacestx.github.io/main/icon-auto-aces.png" class="service-icon">
+      <h3>Seguro de Auto</h3>
+      <p>Cobertura confiable para vehículos personales y comerciales.</p>
+    </div>
+
+    <div class="service-box">
+      <img src="https://raw.githubusercontent.com/insacestx/insacestx.github.io/main/icon-specialty-aces.png" class="service-icon">
+      <h3>Líneas Especializadas</h3>
+      <p>Fianzas, contratistas y coberturas únicas adaptadas a sus necesidades.</p>
+    </div>
+
+  </div>
+</section>
+
+</div>
+
+<!-- 🔁 LANGUAGE TOGGLE SCRIPT -->
+<script>
+function toggleLanguage() {
+  const english = document.getElementById("english");
+  const spanish = document.getElementById("spanish");
+  const toggle = document.getElementById("langToggle");
+
+  if (toggle.checked) {
+    english.style.opacity = 0;
+    setTimeout(() => {
+      english.style.display = "none";
+      spanish.style.display = "block";
+      setTimeout(() => { spanish.style.opacity = 1; }, 50);
+    }, 300);
+  } else {
+    spanish.style.opacity = 0;
+    setTimeout(() => {
+      spanish.style.display = "none";
+      english.style.display = "block";
+      setTimeout(() => { english.style.opacity = 1; }, 50);
+    }, 300);
+  }
+}
+</script>
+
+<!-- 🔴 MOBILE MENU SCRIPT -->
+<script>
+function toggleMobileMenu() {
+  const menu = document.getElementById("mobileMenu");
+  menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+}
+
+function toggleMobileDropdown(button) {
+  const content = button.nextElementSibling;
+  content.style.display = (content.style.display === "block") ? "none" : "block";
+}
+</script>
+
 <!-- FOOTER -->
 <footer class="footer">
     <img src="image2.png" alt="ACES Logo" class="footer-logo">
     <p>© 2026 ACES Insurance Services</p>
 </footer>
-
-<!-- MOBILE MENU SCRIPT -->
-<script>
-function toggleMobileMenu() {
-    const menu = document.getElementById("mobileMenu");
-    menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
-}
-
-function toggleMobileDropdown(button) {
-    const content = button.nextElementSibling;
-    content.style.display = (content.style.display === "block") ? "none" : "block";
-}
-</script>
 
 </body>
 </html>
