@@ -443,4 +443,41 @@ function toggleLanguage() {
     }, 300);
   }
 }
+      /* ============================
+   FIX: Smooth Dropdown Behavior
+   ============================ */
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 35px;
+    left: 0;
+    min-width: 180px;
+    background: #fff;
+    border-left: 4px solid #d40000;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    border-radius: 4px;
+
+    /* NEW BEHAVIOR */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease-in-out;
+    z-index: 999;
+}
+
+/* The magic fix — keeps menu open while hovering the dropdown OR the menu */
+.dropdown:hover .dropdown-menu,
+.dropdown-menu:hover {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Remove old display:block behavior */
+.dropdown:hover .dropdown-menu {
+    display: block; /* overridden by visibility/opacity */
+}
+
 </script>
