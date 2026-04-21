@@ -9,16 +9,14 @@
     <meta name="keywords" content="insurance, Texas insurance, bilingual insurance, auto insurance, home insurance, commercial insurance, Waco insurance, Hewitt insurance, independent insurance agent">
     <meta name="robots" content="index, follow">
 
-    <link rel="stylesheet" href="style.css?v=20">
+    <link rel="stylesheet" href="style.css?v=21">
 </head>
 
 <body>
 
 <!-- ============================================================
-     ENGLISH WRAPPER
+     HEADER (ONE TOGGLE HERE — OUTSIDE WRAPPERS)
 ============================================================ -->
-<div id="english" style="opacity:1; transition:opacity .3s ease;">
-
 <header class="aces-header">
   <div class="header-inner">
 
@@ -27,7 +25,7 @@
       <img src="image2.png" alt="ACES Insurance Services Logo" class="header-logo-img">
     </a>
 
-    <!-- Language Toggle (same style as Services page) -->
+    <!-- SINGLE LANGUAGE TOGGLE (same row, to the right of logo) -->
     <label class="toggle-switch header-toggle">
       <input type="checkbox" id="langToggle" onclick="toggleLanguage()">
       <span class="slider"></span>
@@ -59,35 +57,41 @@
     </nav>
 
     <!-- Mobile Hamburger -->
-    <div class="hamburger" onclick="toggleMobileMenu('en')">☰</div>
+    <div class="hamburger" onclick="toggleMobileMenu()">☰</div>
 
   </div>
 
-  <!-- Mobile Menu EN -->
-  <div id="mobileMenu-en" class="mobile-menu">
-    <a href="index.html">Home</a>
+  <!-- MOBILE MENU (shared for both languages) -->
+  <div id="mobileMenu" class="mobile-menu">
+    <a href="index.html">Home / Inicio</a>
 
-    <button class="mobile-dropdown-btn" onclick="toggleMobileDropdown(this)">Services ▾</button>
+    <button class="mobile-dropdown-btn" onclick="toggleMobileDropdown(this)">Services / Servicios ▾</button>
     <div class="mobile-dropdown-content">
-      <a href="services.html#commercial-lines">Commercial Insurance</a>
-      <a href="services.html#personal-lines">Personal Insurance</a>
-      <a href="services.html#property-lines">Property Insurance</a>
+      <a href="services.html#commercial-lines">Commercial / Comerciales</a>
+      <a href="services.html#personal-lines">Personal / Personales</a>
+      <a href="services.html#property-lines">Property / Propiedad</a>
     </div>
 
-    <button class="mobile-dropdown-btn" onclick="toggleMobileDropdown(this)">Applications ▾</button>
+    <button class="mobile-dropdown-btn" onclick="toggleMobileDropdown(this)">Applications / Aplicaciones ▾</button>
     <div class="mobile-dropdown-content">
       <a href="applications.html#commercial">Commercial Apps</a>
       <a href="applications.html#personal">Personal Apps</a>
     </div>
 
-    <a href="coi.html">COI Request</a>
-    <a href="claims.html">Claims</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
+    <a href="coi.html">COI Request / Solicitud de COI</a>
+    <a href="claims.html">Claims / Reclamos</a>
+    <a href="about.html">About / Acerca de</a>
+    <a href="contact.html">Contact / Contacto</a>
   </div>
 </header>
 
-<!-- ABOUT SECTION -->
+
+
+<!-- ============================================================
+     ENGLISH WRAPPER
+============================================================ -->
+<div id="english" style="opacity:1; transition:opacity .3s ease;">
+
 <section class="about">
     <h2>Who We Are</h2>
     <p>
@@ -98,7 +102,6 @@
     <a href="about.html" class="btn-small">Learn More</a>
 </section>
 
-<!-- SERVICES SECTION -->
 <section id="services">
   <h2>Our Services</h2>
   <div class="services-grid">
@@ -130,7 +133,6 @@
   </div>
 </section>
 
-<!-- CONTACT & TEAM CARD -->
 <section class="contact-card">
     <h2>Contact Us & Meet Our Team</h2>
 
@@ -147,7 +149,6 @@
     </div>
 </section>
 
-<!-- CHAMBER BADGE -->
 <section class="trust">
     <h2>Proud Member</h2>
 
@@ -163,7 +164,6 @@
     </div>
 </section>
 
-<!-- FOOTER -->
 <footer class="footer">
     <img src="image2.png" alt="ACES Logo" class="footer-logo">
     <p>© 2026 ACES Insurance Services</p>
@@ -178,75 +178,6 @@
 ============================================================ -->
 <div id="spanish" style="display:none; opacity:0; transition:opacity .3s ease;">
 
-<header class="aces-header">
-  <div class="header-inner">
-
-    <!-- Logo -->
-    <a href="index.html" class="header-logo">
-      <img src="image2.png" alt="ACES Insurance Services Logo" class="header-logo-img">
-    </a>
-
-    <!-- Language Toggle -->
-    <label class="toggle-switch header-toggle">
-      <input type="checkbox" id="langToggle" onclick="toggleLanguage()">
-      <span class="slider"></span>
-    </label>
-
-    <!-- Desktop Navigation -->
-    <nav class="nav-menu">
-      <div class="dropdown">
-        <span class="nav-link">Servicios ▾</span>
-        <div class="dropdown-menu">
-          <a href="services.html#commercial-lines-es">Líneas Comerciales</a>
-          <a href="services.html#personal-lines-es">Líneas Personales</a>
-          <a href="services.html#property-lines-es">Líneas de Propiedad</a>
-        </div>
-      </div>
-
-      <div class="dropdown">
-        <span class="nav-link">Aplicaciones ▾</span>
-        <div class="dropdown-menu">
-          <a href="applications.html#commercial">Aplicaciones Comerciales</a>
-          <a href="applications.html#personal">Aplicaciones Personales</a>
-        </div>
-      </div>
-
-      <a class="nav-link" href="coi.html">Solicitud de COI</a>
-      <a class="nav-link" href="claims.html">Reclamos</a>
-      <a class="nav-link" href="about.html">Acerca de</a>
-      <a class="nav-link" href="contact.html">Contacto</a>
-    </nav>
-
-    <!-- Mobile Hamburger -->
-    <div class="hamburger" onclick="toggleMobileMenu('es')">☰</div>
-
-  </div>
-
-  <!-- Mobile Menu ES -->
-  <div id="mobileMenu-es" class="mobile-menu">
-    <a href="index.html">Inicio</a>
-
-    <button class="mobile-dropdown-btn" onclick="toggleMobileDropdown(this)">Servicios ▾</button>
-    <div class="mobile-dropdown-content">
-      <a href="services.html#commercial-lines-es">Líneas Comerciales</a>
-      <a href="services.html#personal-lines-es">Líneas Personales</a>
-      <a href="services.html#property-lines-es">Líneas de Propiedad</a>
-    </div>
-
-    <button class="mobile-dropdown-btn" onclick="toggleMobileDropdown(this)">Aplicaciones ▾</button>
-    <div class="mobile-dropdown-content">
-      <a href="applications.html#commercial">Aplicaciones Comerciales</a>
-      <a href="applications.html#personal">Aplicaciones Personales</a>
-    </div>
-
-    <a href="coi.html">Solicitud de COI</a>
-    <a href="claims.html">Reclamos</a>
-    <a href="about.html">Acerca de</a>
-    <a href="contact.html">Contacto</a>
-  </div>
-</header>
-
-<!-- ABOUT SECTION ES -->
 <section class="about">
     <h2>Quiénes Somos</h2>
     <p>
@@ -256,7 +187,6 @@
     <a href="about.html" class="btn-small">Aprender Más</a>
 </section>
 
-<!-- SERVICES SECTION ES -->
 <section id="services">
   <h2>Nuestros Servicios</h2>
   <div class="services-grid">
@@ -288,7 +218,6 @@
   </div>
 </section>
 
-<!-- CONTACT & TEAM CARD ES -->
 <section class="contact-card">
     <h2>Contáctenos y Conozca a Nuestro Equipo</h2>
 
@@ -305,7 +234,6 @@
     </div>
 </section>
 
-<!-- CHAMBER BADGE ES -->
 <section class="trust">
     <h2>Miembro Orgulloso</h2>
 
@@ -321,7 +249,6 @@
     </div>
 </section>
 
-<!-- FOOTER ES -->
 <footer class="footer">
     <img src="image2.png" alt="ACES Logo" class="footer-logo">
     <p>© 2026 ACES Insurance Services</p>
@@ -357,9 +284,8 @@ function toggleLanguage() {
   }
 }
 
-function toggleMobileMenu(lang) {
-  const id = lang === 'es' ? 'mobileMenu-es' : 'mobileMenu-en';
-  const menu = document.getElementById(id);
+function toggleMobileMenu() {
+  const menu = document.getElementById("mobileMenu");
   menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
 }
 
