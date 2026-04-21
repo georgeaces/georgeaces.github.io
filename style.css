@@ -328,6 +328,13 @@ section h2::after {
     visibility: visible;
 }
 
+/* ❌ DELETE THIS IF YOU SEE IT ANYWHERE */
+/*
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+*/
+
 /* ============================
    LANGUAGE TOGGLE
 ============================ */
