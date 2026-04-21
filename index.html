@@ -9,13 +9,13 @@
     <meta name="keywords" content="insurance, Texas insurance, bilingual insurance, auto insurance, home insurance, commercial insurance, Waco insurance, Hewitt insurance, independent insurance agent">
     <meta name="robots" content="index, follow">
 
-    <link rel="stylesheet" href="style.css?v=21">
+    <link rel="stylesheet" href="style.css?v=22">
 </head>
 
 <body>
 
 <!-- ============================================================
-     HEADER (ONE TOGGLE HERE — OUTSIDE WRAPPERS)
+     HEADER (TOGGLE ONLY — NAVIGATION MOVED INTO WRAPPERS)
 ============================================================ -->
 <header class="aces-header">
   <div class="header-inner">
@@ -25,63 +25,12 @@
       <img src="image2.png" alt="ACES Insurance Services Logo" class="header-logo-img">
     </a>
 
-    <!-- SINGLE LANGUAGE TOGGLE (same row, to the right of logo) -->
+    <!-- SINGLE LANGUAGE TOGGLE -->
     <label class="toggle-switch header-toggle">
       <input type="checkbox" id="langToggle" onclick="toggleLanguage()">
       <span class="slider"></span>
     </label>
 
-    <!-- Desktop Navigation -->
-    <nav class="nav-menu">
-      <div class="dropdown">
-        <span class="nav-link">Services ▾</span>
-        <div class="dropdown-menu">
-          <a href="services.html#commercial-lines">Commercial Insurance</a>
-          <a href="services.html#personal-lines">Personal Insurance</a>
-          <a href="services.html#property-lines">Property Insurance</a>
-        </div>
-      </div>
-
-      <div class="dropdown">
-        <span class="nav-link">Applications ▾</span>
-        <div class="dropdown-menu">
-          <a href="applications.html#commercial">Commercial Apps</a>
-          <a href="applications.html#personal">Personal Apps</a>
-        </div>
-      </div>
-
-      <a class="nav-link" href="coi.html">COI Request</a>
-      <a class="nav-link" href="claims.html">Claims</a>
-      <a class="nav-link" href="about.html">About</a>
-      <a class="nav-link" href="contact.html">Contact</a>
-    </nav>
-
-    <!-- Mobile Hamburger -->
-    <div class="hamburger" onclick="toggleMobileMenu()">☰</div>
-
-  </div>
-
-  <!-- MOBILE MENU (shared for both languages) -->
-  <div id="mobileMenu" class="mobile-menu">
-    <a href="index.html">Home / Inicio</a>
-
-    <button class="mobile-dropdown-btn" onclick="toggleMobileDropdown(this)">Services / Servicios ▾</button>
-    <div class="mobile-dropdown-content">
-      <a href="services.html#commercial-lines">Commercial / Comerciales</a>
-      <a href="services.html#personal-lines">Personal / Personales</a>
-      <a href="services.html#property-lines">Property / Propiedad</a>
-    </div>
-
-    <button class="mobile-dropdown-btn" onclick="toggleMobileDropdown(this)">Applications / Aplicaciones ▾</button>
-    <div class="mobile-dropdown-content">
-      <a href="applications.html#commercial">Commercial Apps</a>
-      <a href="applications.html#personal">Personal Apps</a>
-    </div>
-
-    <a href="coi.html">COI Request / Solicitud de COI</a>
-    <a href="claims.html">Claims / Reclamos</a>
-    <a href="about.html">About / Acerca de</a>
-    <a href="contact.html">Contact / Contacto</a>
   </div>
 </header>
 
@@ -91,6 +40,32 @@
      ENGLISH WRAPPER
 ============================================================ -->
 <div id="english" style="opacity:1; transition:opacity .3s ease;">
+
+<!-- ENGLISH NAVIGATION -->
+<nav class="nav-menu">
+  <div class="dropdown">
+    <span class="nav-link">Services ▾</span>
+    <div class="dropdown-menu">
+      <a href="services.html#commercial-lines">Commercial Insurance</a>
+      <a href="services.html#personal-lines">Personal Insurance</a>
+      <a href="services.html#property-lines">Property Insurance</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <span class="nav-link">Applications ▾</span>
+    <div class="dropdown-menu">
+      <a href="applications.html#commercial">Commercial Apps</a>
+      <a href="applications.html#personal">Personal Apps</a>
+    </div>
+  </div>
+
+  <a class="nav-link" href="coi.html">COI Request</a>
+  <a class="nav-link" href="claims.html">Claims</a>
+  <a class="nav-link" href="about.html">About</a>
+  <a class="nav-link" href="contact.html">Contact</a>
+</nav>
+
 
 <section class="about">
     <h2>Who We Are</h2>
@@ -177,6 +152,32 @@
      SPANISH WRAPPER
 ============================================================ -->
 <div id="spanish" style="display:none; opacity:0; transition:opacity .3s ease;">
+
+<!-- SPANISH NAVIGATION -->
+<nav class="nav-menu">
+  <div class="dropdown">
+    <span class="nav-link">Servicios ▾</span>
+    <div class="dropdown-menu">
+      <a href="services.html#commercial-lines-es">Líneas Comerciales</a>
+      <a href="services.html#personal-lines-es">Líneas Personales</a>
+      <a href="services.html#property-lines-es">Líneas de Propiedad</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <span class="nav-link">Aplicaciones ▾</span>
+    <div class="dropdown-menu">
+      <a href="applications.html#commercial">Aplicaciones Comerciales</a>
+      <a href="applications.html#personal">Aplicaciones Personales</a>
+    </div>
+  </div>
+
+  <a class="nav-link" href="coi.html">Solicitud de COI</a>
+  <a class="nav-link" href="claims.html">Reclamos</a>
+  <a class="nav-link" href="about.html">Acerca de</a>
+  <a class="nav-link" href="contact.html">Contacto</a>
+</nav>
+
 
 <section class="about">
     <h2>Quiénes Somos</h2>
@@ -282,16 +283,6 @@ function toggleLanguage() {
       setTimeout(() => { en.style.opacity = 1; }, 50);
     }, 300);
   }
-}
-
-function toggleMobileMenu() {
-  const menu = document.getElementById("mobileMenu");
-  menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
-}
-
-function toggleMobileDropdown(button) {
-  const content = button.nextElementSibling;
-  content.style.display = (content.style.display === "block") ? "none" : "block";
 }
 </script>
 
