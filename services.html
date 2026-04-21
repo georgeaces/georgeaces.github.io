@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Services - ACES Insurance Services</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css?v=5">
+  <link rel="stylesheet" href="style.css?v=6">
 </head>
 
 <body>
@@ -14,7 +14,7 @@
 ============================ -->
 <div id="english" style="opacity:1; transition:opacity .3s ease;">
 
-  <!-- HEADER -->
+  <!-- HEADER EN -->
   <header class="aces-header">
     <div class="header-inner">
 
@@ -73,7 +73,7 @@
     </div>
   </header>
 
-  <!-- LANGUAGE TOGGLE (shared) -->
+  <!-- LANGUAGE TOGGLE -->
   <div class="toggle-wrapper">
     <label class="toggle-switch">
       <input type="checkbox" id="langToggle" onclick="toggleLanguage()">
@@ -196,10 +196,10 @@
     </div>
   </header>
 
-  <!-- LANGUAGE TOGGLE (same position) -->
+  <!-- LANGUAGE TOGGLE -->
   <div class="toggle-wrapper">
     <label class="toggle-switch">
-      <input type="checkbox" checked onclick="toggleLanguage()">
+      <input type="checkbox" id="langToggle" onclick="toggleLanguage()">
       <span class="slider"></span>
     </label>
   </div>
@@ -264,14 +264,13 @@ function toggleLanguage() {
   const spanish = document.getElementById("spanish");
   const toggle = document.getElementById("langToggle");
 
-  if (!english || !spanish || !toggle) return;
-
   if (toggle.checked) {
     english.style.opacity = 0;
     setTimeout(() => {
       english.style.display = "none";
       spanish.style.display = "block";
       setTimeout(() => { spanish.style.opacity = 1; }, 50);
+      filterLines();
     }, 300);
   } else {
     spanish.style.opacity = 0;
@@ -279,6 +278,7 @@ function toggleLanguage() {
       spanish.style.display = "none";
       english.style.display = "block";
       setTimeout(() => { english.style.opacity = 1; }, 50);
+      filterLines();
     }, 300);
   }
 }
@@ -286,49 +286,37 @@ function toggleLanguage() {
 function toggleMobileMenu(lang) {
   const menuId = lang === 'es' ? 'mobileMenu-es' : 'mobileMenu-en';
   const menu = document.getElementById(menuId);
-  if (!menu) return;
   menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
 }
 
 function toggleMobileDropdown(button) {
   const content = button.nextElementSibling;
-  if (!content) return;
   content.style.display = (content.style.display === "block") ? "none" : "block";
 }
-</script>
-  
-<script>
+
 function filterLines() {
   const hash = window.location.hash.replace("#", "");
 
-  // English sections
   const enSections = {
     "commercial-lines": document.getElementById("commercial-lines"),
     "personal-lines": document.getElementById("personal-lines"),
     "property-lines": document.getElementById("property-lines")
   };
 
-  // Spanish sections
   const esSections = {
     "commercial-lines-es": document.getElementById("commercial-lines-es"),
     "personal-lines-es": document.getElementById("personal-lines-es"),
     "property-lines-es": document.getElementById("property-lines-es")
   };
 
-  const english = document.getElementById("english");
-  const spanish = document.getElementById("spanish");
   const toggle = document.getElementById("langToggle");
-
-  // Determine which language is active
   const activeSections = toggle.checked ? esSections : enSections;
 
-  // If no hash → show all
   if (!hash) {
     Object.values(activeSections).forEach(sec => sec.style.display = "block");
     return;
   }
 
-  // Hide all except selected
   Object.keys(activeSections).forEach(key => {
     if (key === hash || key === hash + "-es") {
       activeSections[key].style.display = "block";
@@ -338,19 +326,9 @@ function filterLines() {
   });
 }
 
-// Run on load + when hash changes
 window.addEventListener("load", filterLines);
 window.addEventListener("hashchange", filterLines);
-
-// Re-run filter when language toggles
-document.addEventListener("DOMContentLoaded", () => {
-  const toggle = document.getElementById("langToggle");
-  if (toggle) toggle.addEventListener("change", () => {
-    setTimeout(filterLines, 350); // wait for fade animation
-  });
-});
 </script>
 
-  
 </body>
 </html>
