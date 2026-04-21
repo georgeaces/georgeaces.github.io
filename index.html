@@ -9,13 +9,13 @@
     <meta name="keywords" content="insurance, Texas insurance, bilingual insurance, auto insurance, home insurance, commercial insurance, Waco insurance, Hewitt insurance, independent insurance agent">
     <meta name="robots" content="index, follow">
 
-    <link rel="stylesheet" href="style.css?v=24">
+    <link rel="stylesheet" href="style.css?v=25">
 </head>
 
 <body>
 
 <!-- ============================================================
-     HEADER (LOGO → TOGGLE → NAVIGATION)
+     HEADER — LOGO → TOGGLE → NAVIGATION (SIDE‑BY‑SIDE)
 ============================================================ -->
 <header class="aces-header">
   <div class="header-inner">
@@ -31,10 +31,8 @@
       <span class="slider"></span>
     </label>
 
-    <!-- NAV CONTAINER (this stays in header visually) -->
-    <div id="navContainer">
-      <!-- English nav loads here by default -->
-    </div>
+    <!-- NAVIGATION (cloned dynamically) -->
+    <nav id="navContainer" class="nav-menu" style="margin-left: 20px;"></nav>
 
   </div>
 </header>
@@ -46,7 +44,7 @@
 ============================================================ -->
 <div id="english" style="opacity:1; transition:opacity .3s ease;">
 
-<!-- ENGLISH NAVIGATION (invisible, cloned into header) -->
+<!-- ENGLISH NAVIGATION (hidden, cloned into header) -->
 <nav id="navEN" class="nav-menu" style="display:none;">
   <div class="dropdown">
     <span class="nav-link">Services ▾</span>
@@ -158,7 +156,7 @@
 ============================================================ -->
 <div id="spanish" style="display:none; opacity:0; transition:opacity .3s ease;">
 
-<!-- SPANISH NAVIGATION (invisible, cloned into header) -->
+<!-- SPANISH NAVIGATION (hidden, cloned into header) -->
 <nav id="navES" class="nav-menu" style="display:none;">
   <div class="dropdown">
     <span class="nav-link">Servicios ▾</span>
