@@ -32,7 +32,7 @@
     </label>
 
     <!-- Desktop nav (cloned here) -->
-    <nav id="navContainer" class="nav-menu"></nav>
+   <nav id="navContainer" class="nav-menu" style="margin-left: 40px;"></nav>
 
     <!-- Mobile hamburger -->
     <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation">
@@ -308,6 +308,27 @@ function toggleLanguage() {
 // Load English nav on page load
 loadNav("en");
 </script>
+    // Mobile nav toggle
+document.getElementById("mobileNavToggle").addEventListener("click", () => {
+  let mobileMenu = document.getElementById("mobileNavMenu");
+  const toggle = document.getElementById("langToggle");
+  const currentLang = toggle.checked ? "es" : "en";
+  const sourceNav = currentLang === "en" ? document.getElementById("navEN") : document.getElementById("navES");
+
+  if (!mobileMenu) {
+    mobileMenu = document.createElement("nav");
+    mobileMenu.id = "mobileNavMenu";
+    mobileMenu.className = "nav-menu mobile-open";
+    document.querySelector(".aces-header").appendChild(mobileMenu);
+  }
+
+  if (mobileMenu.style.display === "flex") {
+    mobileMenu.style.display = "none";
+  } else {
+    mobileMenu.innerHTML = sourceNav.innerHTML;
+    mobileMenu.style.display = "flex";
+  }
+});
 
 </body>
 </html>
