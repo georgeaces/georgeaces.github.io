@@ -7,9 +7,31 @@
 
 <body>
 
-<header>
-    <h1>ACES Insurance Services</h1>
+<header class="aces-header">
+  <div class="header-inner">
+
+    <!-- Logo -->
+    <a href="index.html" class="header-logo">
+      <img src="image2.png" alt="ACES Insurance Services Logo" class="header-logo-img">
+    </a>
+
+    <!-- Language toggle -->
+    <label class="toggle-switch header-toggle">
+      <input type="checkbox" id="langToggle" onclick="toggleLanguage()">
+      <span class="slider"></span>
+    </label>
+
+    <!-- Desktop nav (cloned here) -->
+    <nav id="navContainer" class="nav-menu"></nav>
+
+    <!-- Mobile hamburger -->
+    <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation">
+      ☰
+    </button>
+
+  </div>
 </header>
+
 
 <nav>
     <a href="index.html">Home</a>
