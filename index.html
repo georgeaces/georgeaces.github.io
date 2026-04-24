@@ -9,27 +9,122 @@
   <meta name="keywords" content="insurance, Texas insurance, bilingual insurance, auto insurance, home insurance, commercial insurance, Waco insurance, Hewitt insurance, independent insurance agent">
   <meta name="robots" content="index, follow">
 
-  <link rel="stylesheet" href="style.css?v=27">
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    /* HEADER LAYOUT */
+    .aces-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 40px;
+      background: #ffffff;
+      border-bottom: 2px solid #d40000;
+    }
+
+    .header-left,
+    .header-center,
+    .header-right {
+      display: flex;
+      align-items: center;
+    }
+
+    .aces-logo {
+      height: 60px;
+    }
+
+    .lang-toggle {
+      background: #d40000;
+      color: #fff;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      margin: 0 40px;
+    }
+
+    .nav-menu {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-menu a {
+      text-decoration: none;
+      color: #000;
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .aces-header {
+        flex-direction: column;
+        gap: 16px;
+        padding: 16px 20px;
+      }
+
+      .lang-toggle {
+        margin: 0;
+      }
+
+      .nav-menu {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+      }
+    }
+
+    main {
+      padding: 40px;
+    }
+  </style>
 </head>
 
 <body>
-<header class="aces-header">
-  <div class="header-left">
-    <img src="assets/logo-aces.png" alt="ACES Insurance Services" class="aces-logo">
-  </div>
-  
-  <div class="header-center">
-    <button id="langToggle" class="lang-toggle">ES</button>
-  </div>
 
-  <nav class="header-right">
-    <ul class="nav-menu">
-      <li><a href="services.html">Services</a></li>
-      <li><a href="applications.html">Applications</a></li>
-      <li><a href="coi.html">COI Request</a></li>
-      <li><a href="claims.html">Claims</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+  <!-- HEADER -->
+  <header class="aces-header">
+    <div class="header-left">
+      <img src="assets/logo-aces.png" alt="ACES Insurance Services" class="aces-logo">
+    </div>
+
+    <div class="header-center">
+      <button id="langToggle" class="lang-toggle">ES</button>
+    </div>
+
+    <nav class="header-right">
+      <ul class="nav-menu">
+        <li><a href="services.html">Services</a></li>
+        <li><a href="applications.html">Applications</a></li>
+        <li><a href="coi.html">COI Request</a></li>
+        <li><a href="claims.html">Claims</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- TEST CONTENT -->
+  <main>
+    <h1>Header Layout Test</h1>
+    <p>If the header looks correct, we’ll build the full homepage next.</p>
+  </main>
+
+  <script>
+    document.getElementById("langToggle").addEventListener("click", function () {
+      const html = document.documentElement;
+      const isEnglish = html.getAttribute("lang") === "en";
+
+      html.setAttribute("lang", isEnglish ? "es" : "en");
+      this.textContent = isEnglish ? "EN" : "ES";
+    });
+  </script>
+
+</body>
+</html>
+
