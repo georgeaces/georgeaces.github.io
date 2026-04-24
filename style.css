@@ -227,13 +227,15 @@ body {
 
 /* SERVICES SECTION */
 #services {
-  background: #fff5f5;
+  background: #fff5f5 !important;
   padding: 40px 20px;
   border-radius: 8px;
 }
 
-#services h2 {
-  text-align: center;
+#services > h2 {
+  text-align: center !important;
+  width: 100%;
+  display: block;
   margin-bottom: 20px;
 }
 
@@ -242,6 +244,7 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 30px;
   padding: 20px 0;
+  margin-top: 20px;
 }
 
 .service-link {
@@ -260,7 +263,7 @@ body {
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
-.service-box:hover {
+.service-link:hover .service-box {
   transform: translateY(-6px);
   box-shadow: 0 6px 16px rgba(212, 0, 0, 0.25);
   border-color: #d40000;
@@ -270,7 +273,7 @@ body {
   transition: color 0.25s ease;
 }
 
-.service-box:hover h3 {
+.service-link:hover .service-box h3 {
   color: #d40000;
 }
 
@@ -340,52 +343,4 @@ body {
   height: auto !important;
   display: block !important;
   margin: 0 auto 10px auto !important;
-}
-/* FINAL FIXES — SERVICES SECTION */
-#services > h2 {
-  text-align: center !important;
-  width: 100%;
-  display: block;
-}
-
-#services {
-  background: #fff5f5 !important;
-  padding: 40px 20px;
-  border-radius: 8px;
-}
-
-.services-grid {
-  margin-top: 20px;
-}
-
-/* Hover glow for full clickable card */
-.service-link:hover .service-box {
-  transform: translateY(-6px);
-  box-shadow: 0 6px 16px rgba(212, 0, 0, 0.25);
-  border-color: #d40000;
-}
-
-/* Title glow */
-.service-link:hover .service-box h3 {
-  color: #d40000;
-}
-
-#services > h2 {
-  text-align: center !important;
-  width: 100%;
-  display: block;
-}
-
-#services {
-  background: #fff5f5 !important;
-  padding: 40px 20px;
-  border-radius: 8px;
-}
-
-.services-grid {
-  margin-top: 20px;
-}
-
-.service-link:hover .service-box h3 {
-  color: #d40000;
 }
