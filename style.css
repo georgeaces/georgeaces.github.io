@@ -344,3 +344,79 @@ body {
   display: block !important;
   margin: 0 auto 10px auto !important;
 }
+
+/* ============================================================
+   ACES COLOR STRIPE LAYOUT
+   Red → Black → White → Red → Black
+============================================================ */
+
+/* 1️⃣ WHO WE ARE — RED */
+.about {
+  background: #d40000;
+  color: white;
+  padding: 50px 20px;
+}
+.about h2 {
+  color: white;
+}
+.about p {
+  color: white;
+}
+.about a.btn-small {
+  background: white;
+  color: #d40000;
+}
+
+/* 2️⃣ OUR SERVICES — BLACK */
+#services {
+  background: #000000 !important;
+  color: white;
+  padding: 50px 20px;
+  border-radius: 0;
+}
+#services h2 {
+  color: white !important;
+}
+
+/* White service cards on black background */
+.service-box {
+  background: #ffffff;
+  border: 1px solid #ddd;
+}
+
+/* Hover glow + title glow */
+.service-link:hover .service-box {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(212, 0, 0, 0.35);
+  border-color: #d40000;
+}
+.service-link:hover .service-box h3 {
+  color: #d40000;
+}
+
+/* 3️⃣ CONTACT CARD — WHITE */
+.contact-card {
+  background: #ffffff;
+  color: #111;
+}
+
+/* 4️⃣ TRUST / CHAMBER — RED */
+.trust {
+  background: #d40000;
+  color: white;
+  padding: 50px 20px;
+}
+.trust h2,
+.trust p {
+  color: white;
+}
+
+/* 5️⃣ FOOTER — BLACK */
+.footer {
+  background: #000000;
+  color: white;
+  border-top: none;
+}
+.footer-logo {
+  filter: brightness(0) invert(1); /* makes logo white if needed */
+}
