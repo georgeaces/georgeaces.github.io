@@ -394,29 +394,54 @@ body {
   color: #d40000;
 }
 
-/* 3️⃣ CONTACT CARD — WHITE */
+/* ============================================================
+   SECTION: CONTACT CARD (WHITE)
+============================================================ */
 .contact-card {
   background: #ffffff;
   color: #111;
+  text-align: center;
 }
 
-/* 4️⃣ TRUST / CHAMBER — RED */
+.card-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+
+
+/* ============================================================
+   SECTION: TRUST (RED)
+============================================================ */
 .trust {
   background: #d40000;
-  color: white;
-  padding: 50px 20px;
-}
-.trust h2,
-.trust p {
-  color: white;
+  color: #ffffff;
+  text-align: center;
 }
 
-/* 5️⃣ FOOTER — BLACK */
+.trust-badge {
+  height: 120px;
+  margin: 20px 0;
+}
+
+.trust-qr-img {
+  height: 140px;
+  margin-top: 10px;
+}
+
+
+
+/* ============================================================
+   FOOTER (BLACK)
+============================================================ */
 .footer {
   background: #000000;
-  color: white;
-  border-top: none;
+  color: #ffffff;
+  text-align: center;
+  padding: 30px 20px;
 }
+
 .footer-logo {
-  filter: brightness(0) invert(1); /* makes logo white if needed */
+  height: 50px;
+  margin-bottom: 10px;
 }
