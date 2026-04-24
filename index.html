@@ -2,129 +2,97 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ACES Insurance Services | Texas Independent Insurance Agency</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="ACES Insurance Services – Bilingual insurance support for Texas families and businesses. Auto, home, commercial, property, and more.">
-  <meta name="keywords" content="insurance, Texas insurance, bilingual insurance, auto insurance, home insurance, commercial insurance, Waco insurance, Hewitt insurance, independent insurance agent">
-  <meta name="robots" content="index, follow">
-
-  <style>
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-
-    /* HEADER LAYOUT */
-    .aces-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 20px 40px;
-      background: #ffffff;
-      border-bottom: 2px solid #d40000;
-    }
-
-    .header-left,
-    .header-center,
-    .header-right {
-      display: flex;
-      align-items: center;
-    }
-
-    .aces-logo {
-      height: 60px;
-    }
-
-    .lang-toggle {
-      background: #d40000;
-      color: #fff;
-      border: none;
-      padding: 8px 14px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-weight: bold;
-      margin: 0 40px;
-    }
-
-    .nav-menu {
-      list-style: none;
-      display: flex;
-      gap: 40px;
-      margin: 0;
-      padding: 0;
-    }
-
-    .nav-menu a {
-      text-decoration: none;
-      color: #000;
-      font-weight: 600;
-    }
-
-    @media (max-width: 768px) {
-      .aces-header {
-        flex-direction: column;
-        gap: 16px;
-        padding: 16px 20px;
-      }
-
-      .lang-toggle {
-        margin: 0;
-      }
-
-      .nav-menu {
-        flex-direction: column;
-        gap: 12px;
-        align-items: center;
-      }
-    }
-
-    main {
-      padding: 40px;
-    }
-  </style>
+  <!-- Global stylesheet -->
+  <link rel="stylesheet" href="style.css?v=27">
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header class="aces-header">
-    <div class="header-left">
-      <img src="assets/logo-aces.png" alt="ACES Insurance Services" class="aces-logo">
+<!-- ⭐ GLOBAL HEADER -->
+<header class="aces-header">
+  <div class="header-inner">
+
+    <!-- Logo -->
+    <a href="index.html" class="header-logo">
+      <img src="image2.png" alt="ACES Insurance Services Logo" class="header-logo-img">
+    </a>
+
+    <!-- Language toggle -->
+    <label class="toggle-switch header-toggle">
+      <input type="checkbox" id="langToggle" onclick="toggleLanguage()">
+      <span class="slider"></span>
+    </label>
+
+    <!-- Desktop nav (auto-filled by global.js) -->
+    <nav id="navContainer" class="nav-menu"></nav>
+
+    <!-- Mobile hamburger -->
+    <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation">
+      ☰
+    </button>
+
+  </div>
+</header>
+
+<!-- ⭐ HERO SECTION -->
+<section class="hero">
+  <div class="hero-content">
+    <h1 data-en="Insurance Made Simple." data-es="Seguros Hechos Simples.">Insurance Made Simple.</h1>
+    <p data-en="Serving Texas families and businesses with bilingual support and trusted guidance."
+       data-es="Sirviendo a familias y negocios de Texas con apoyo bilingüe y orientación confiable.">
+       Serving Texas families and businesses with bilingual support and trusted guidance.
+    </p>
+    <a href="services.html" class="hero-btn" data-en="Explore Services" data-es="Ver Servicios">Explore Services</a>
+  </div>
+</section>
+
+<!-- ⭐ WHO WE ARE -->
+<section class="page-section">
+  <h2 class="section-title" data-en="Who We Are" data-es="Quiénes Somos">Who We Are</h2>
+  <p data-en="ACES Insurance Services is an independent agency dedicated to helping Texans find the right coverage at the right price."
+     data-es="ACES Insurance Services es una agencia independiente dedicada a ayudar a los tejanos a encontrar la cobertura adecuada al mejor precio.">
+     ACES Insurance Services is an independent agency dedicated to helping Texans find the right coverage at the right price.
+  </p>
+</section>
+
+<!-- ⭐ SERVICES PREVIEW -->
+<section class="page-section light-block">
+  <h2 class="section-title" data-en="Our Services" data-es="Nuestros Servicios">Our Services</h2>
+
+  <div class="service-grid">
+    <div class="service-card">
+      <h3 data-en="Auto Insurance" data-es="Seguro de Auto">Auto Insurance</h3>
+      <p data-en="Affordable coverage for Texas drivers." data-es="Cobertura accesible para conductores en Texas.">
+        Affordable coverage for Texas drivers.
+      </p>
     </div>
 
-    <div class="header-center">
-      <button id="langToggle" class="lang-toggle">ES</button>
+    <div class="service-card">
+      <h3 data-en="Home Insurance" data-es="Seguro de Casa">Home Insurance</h3>
+      <p data-en="Protecting your home and property." data-es="Protegiendo su hogar y propiedad.">
+        Protecting your home and property.
+      </p>
     </div>
 
-    <nav class="header-right">
-      <ul class="nav-menu">
-        <li><a href="services.html">Services</a></li>
-        <li><a href="applications.html">Applications</a></li>
-        <li><a href="coi.html">COI Request</a></li>
-        <li><a href="claims.html">Claims</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+    <div class="service-card">
+      <h3 data-en="Commercial Insurance" data-es="Seguro Comercial">Commercial Insurance</h3>
+      <p data-en="Coverage for Texas businesses." data-es="Cobertura para negocios en Texas.">
+        Coverage for Texas businesses.
+      </p>
+    </div>
+  </div>
+</section>
 
-  <!-- TEST CONTENT -->
-  <main>
-    <h1>Header Layout Test</h1>
-    <p>If the header looks correct, we’ll build the full homepage next.</p>
-  </main>
+<!-- ⭐ FOOTER -->
+<footer class="footer">
+  <p>© 2026 ACES Insurance Services — Hewitt, TX</p>
+</footer>
 
-  <script>
-    document.getElementById("langToggle").addEventListener("click", function () {
-      const html = document.documentElement;
-      const isEnglish = html.getAttribute("lang") === "en";
-
-      html.setAttribute("lang", isEnglish ? "es" : "en");
-      this.textContent = isEnglish ? "EN" : "ES";
-    });
-  </script>
+<!-- ⭐ GLOBAL SCRIPT (required for header, nav, toggle, mobile menu) -->
+<script src="global.js"></script>
 
 </body>
 </html>
-
