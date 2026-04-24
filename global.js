@@ -1,3 +1,6 @@
+/* ============================================================
+   LOAD NAVIGATION (EN / ES)
+============================================================ */
 function loadNav(language) {
   const navContainer = document.getElementById("navContainer");
   const navEN = document.getElementById("navEN");
@@ -8,8 +11,19 @@ function loadNav(language) {
   } else {
     navContainer.innerHTML = navES.innerHTML;
   }
+
+  // Re-enable dropdowns after nav injection
+  setTimeout(enableDropdowns, 50);
 }
 
+/* Load English nav on page load */
+loadNav("en");
+
+
+
+/* ============================================================
+   LANGUAGE TOGGLE (EN <-> ES)
+============================================================ */
 function toggleLanguage() {
   const en = document.getElementById("english");
   const es = document.getElementById("spanish");
@@ -34,10 +48,11 @@ function toggleLanguage() {
   }
 }
 
-// Load English nav on page load
-loadNav("en");
 
-// Mobile nav toggle
+
+/* ============================================================
+   MOBILE NAV TOGGLE
+============================================================ */
 document.getElementById("mobileNavToggle").addEventListener("click", () => {
   let mobileMenu = document.getElementById("mobileNavMenu");
   const toggle = document.getElementById("langToggle");
@@ -56,54 +71,27 @@ document.getElementById("mobileNavToggle").addEventListener("click", () => {
   } else {
     mobileMenu.innerHTML = sourceNav.innerHTML;
     mobileMenu.style.display = "flex";
+    enableDropdowns(); // enable dropdowns inside mobile nav
   }
 });
 
-/* ================================
+
+
+/* ============================================================
    CLICK‑TO‑OPEN DROPDOWNS
    (Option A — click outside to close)
-================================ */
-
-document.addEventListener("click", function (event) {
-  const isDropdownToggle = event.target.classList.contains("dropdown-toggle");
-  const allMenus = document.querySelectorAll(".dropdown-menu");
-
-  // If clicking a dropdown toggle
-  if (isDropdownToggle) {
-    const parent = event.target.closest(".dropdown");
-    const menu = parent.querySelector(".dropdown-menu");
-
-    // Close all other dropdowns
-    allMenus.forEach(m => {
-      if (m !== menu) m.style.display = "none";
-    });
-
-    // Toggle this dropdown
-    menu.style.display = (menu.style.display === "block") ? "none" : "block";
-    return;
-  }
-
-  // If clicking inside a dropdown menu, do nothing
-  if (event.target.closest(".dropdown-menu")) return;
-
-  // Otherwise, click outside → close all dropdowns
-  allMenus.forEach(m => m.style.display = "none");
-});
-
-/* ================================
-   RE‑APPLY DROPDOWN LOGIC AFTER NAV LOAD
-================================ */
-
+============================================================ */
 function enableDropdowns() {
   const toggles = document.querySelectorAll(".dropdown-toggle");
 
   toggles.forEach(toggle => {
     toggle.addEventListener("click", function (e) {
-      e.stopPropagation(); // Prevent document click from firing immediately
+      e.stopPropagation();
+
       const parent = this.closest(".dropdown");
       const menu = parent.querySelector(".dropdown-menu");
 
-      // Close all other menus
+      // Close all other dropdowns
       document.querySelectorAll(".dropdown-menu").forEach(m => {
         if (m !== menu) m.style.display = "none";
       });
@@ -114,14 +102,11 @@ function enableDropdowns() {
   });
 }
 
-/* ================================
-   RUN DROPDOWN SETUP AFTER NAV LOAD
-================================ */
+/* Close dropdowns when clicking outside */
+document.addEventListener("click", function (event) {
+  const isDropdownToggle = event.target.classList.contains("dropdown-toggle");
 
-const originalLoadNav = loadNav;
-
-loadNav = function (language) {
-  originalLoadNav(language);
-  setTimeout(enableDropdowns, 50); // Wait for nav injection
-};
-
+  if (!isDropdownToggle && !event.target.closest(".dropdown-menu")) {
+    document.querySelectorAll(".dropdown-menu").forEach(m => m.style.display = "none");
+  }
+});
