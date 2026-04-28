@@ -2,298 +2,234 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Services - ACES Insurance Services</title>
+  <title>ACES Insurance Services | Our Services</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css?v=6">
+
+  <meta name="description" content="Explore ACES Insurance Services offerings including life, commercial, property, and auto insurance. Bilingual support available.">
+  <meta name="robots" content="index, follow">
+
+  <link rel="stylesheet" href="style.css?v=31">
 </head>
 
 <body>
 
-<!-- ============================
-     ENGLISH VERSION WRAPPER
-============================ -->
-<div id="english" style="opacity:1; transition:opacity .3s ease;">
-
 <header class="aces-header">
   <div class="header-inner">
 
-    <!-- Logo -->
     <a href="index.html" class="header-logo">
       <img src="image2.png" alt="ACES Insurance Services Logo" class="header-logo-img">
     </a>
 
-    <!-- Language toggle -->
-    <label class="toggle-switch header-toggle">
-      <input type="checkbox" id="langToggle" onclick="toggleLanguage()">
-      <span class="slider"></span>
-    </label>
+    <!-- FLAG + TEXT LANGUAGE SWITCH -->
+    <div class="lang-switch">
+      <span class="lang-option active" data-lang="english">🇺🇸 EN</span>
+      <span class="divider">|</span>
+      <span class="lang-option" data-lang="spanish">🇲🇽 ES</span>
+    </div>
 
-    <!-- Desktop nav (cloned here) -->
     <nav id="navContainer" class="nav-menu"></nav>
 
-    <!-- Mobile hamburger -->
-    <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation">
-      ☰
-    </button>
+    <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation">☰</button>
 
   </div>
 </header>
 
-  <!-- LANGUAGE TOGGLE -->
-  <div class="toggle-wrapper">
-    <label class="toggle-switch">
-      <input type="checkbox" id="langToggle" onclick="toggleLanguage()">
-      <span class="slider"></span>
-    </label>
-  </div>
+<!-- ================= ENGLISH ================= -->
+<div id="english">
 
-  <!-- MAIN CONTENT EN -->
-  <section>
+  <section class="about">
     <h2>Our Services</h2>
-    <p>ACES Insurance Services provides a wide range of personal, commercial, and property insurance solutions.</p>
+    <p>
+      ACES Insurance Services provides trusted insurance solutions for families and businesses across Texas.
+      Explore our core offerings below.
+    </p>
   </section>
 
-  <!-- PROPERTY LINES -->
-  <section id="property-lines">
-    <h2>Property Lines</h2>
+  <section id="services">
+    <h2>Insurance Solutions</h2>
+
     <div class="services-grid">
-      <div class="service-box"><h3>Home Insurance</h3></div>
-      <div class="service-box"><h3>Rental Insurance</h3></div>
-      <div class="service-box"><h3>Condo Insurance</h3></div>
-      <div class="service-box"><h3>Landlord Insurance</h3></div>
-      <div class="service-box"><h3>Flood Insurance</h3></div>
-      <div class="service-box"><h3>Windstorm Insurance</h3></div>
-    </div>
-  </section>
 
-  <!-- PERSONAL LINES -->
-  <section id="personal-lines">
-    <h2>Personal Lines</h2>
-    <div class="services-grid">
-      <div class="service-box"><h3>Auto Insurance</h3></div>
-      <div class="service-box"><h3>Motorcycle Insurance</h3></div>
-      <div class="service-box"><h3>RV Insurance</h3></div>
-      <div class="service-box"><h3>Golf Cart Insurance</h3></div>
-      <div class="service-box"><h3>Life Insurance</h3></div>
-    </div>
-  </section>
-
-  <!-- COMMERCIAL LINES -->
-  <section id="commercial-lines">
-    <h2>Commercial Lines</h2>
-    <div class="services-grid">
-      <div class="service-box"><h3>General Liability</h3></div>
-      <div class="service-box"><h3>Commercial Auto</h3></div>
-      <div class="service-box"><h3>Workers Compensation</h3></div>
-      <div class="service-box"><h3>Bonds</h3></div>
-      <div class="service-box"><h3>Specialty Lines</h3></div>
-    </div>
-  </section>
-
-  <!-- FOOTER EN -->
-  <footer class="footer">
-    <img src="image2.png" alt="ACES Logo" class="footer-logo">
-    <p>© 2026 ACES Insurance Services</p>
-  </footer>
-
-</div>
-
-<!-- ============================
-     SPANISH VERSION WRAPPER
-============================ -->
-<div id="spanish" style="display:none; opacity:0; transition:opacity .3s ease;">
-
-  <!-- HEADER ES -->
-  <header class="aces-header">
-    <div class="header-inner">
-
-      <a href="index.html" class="header-logo">
-        <img src="image2.png" alt="ACES Insurance Services Logo" class="header-logo-img">
+      <a href="applications.html#life" class="service-link">
+        <div class="service-box">
+          <img src="icon-life-aces.png" class="service-icon">
+          <h3>Life Insurance</h3>
+          <p>Coverage designed to protect your loved ones.</p>
+        </div>
       </a>
 
-      <nav class="nav-menu">
-        <div class="dropdown">
-          <span class="nav-link">Servicios ▾</span>
-          <div class="dropdown-menu">
-            <a href="#commercial-lines-es">Líneas Comerciales</a>
-            <a href="#personal-lines-es">Líneas Personales</a>
-            <a href="#property-lines-es">Líneas de Propiedad</a>
-          </div>
+      <a href="applications.html#commercial" class="service-link">
+        <div class="service-box">
+          <img src="icon-commercial-aces.png" class="service-icon">
+          <h3>Commercial Insurance</h3>
+          <p>Customized protection for your business.</p>
         </div>
+      </a>
 
-        <div class="dropdown">
-          <span class="nav-link">Aplicaciones ▾</span>
-          <div class="dropdown-menu">
-            <a href="applications.html#commercial">Aplicaciones Comerciales</a>
-            <a href="applications.html#personal">Aplicaciones Personales</a>
-          </div>
+      <a href="applications.html#property" class="service-link">
+        <div class="service-box">
+          <img src="icon-property-aces.png" class="service-icon">
+          <h3>Property Insurance</h3>
+          <p>Safeguard your home and valuable assets.</p>
         </div>
+      </a>
 
-        <a class="nav-link" href="coi.html">Solicitud de COI</a>
-        <a class="nav-link" href="claims.html">Reclamos</a>
-        <a class="nav-link" href="about.html">Acerca de</a>
-        <a class="nav-link" href="contact.html">Contacto</a>
-      </nav>
+      <a href="applications.html#auto" class="service-link">
+        <div class="service-box">
+          <img src="icon-auto-aces.png" class="service-icon">
+          <h3>Auto Insurance</h3>
+          <p>Reliable coverage for your vehicles.</p>
+        </div>
+      </a>
 
-      <div class="hamburger" onclick="toggleMobileMenu('es')">☰</div>
-    </div>
-
-    <!-- MOBILE MENU ES -->
-    <div id="mobileMenu-es" class="mobile-menu">
-      <a href="index.html">Inicio</a>
-
-      <button class="mobile-dropdown-btn" onclick="toggleMobileDropdown(this)">Servicios ▾</button>
-      <div class="mobile-dropdown-content">
-        <a href="#commercial-lines-es">Líneas Comerciales</a>
-        <a href="#personal-lines-es">Líneas Personales</a>
-        <a href="#property-lines-es">Líneas de Propiedad</a>
-      </div>
-
-      <button class="mobile-dropdown-btn" onclick="toggleMobileDropdown(this)">Aplicaciones ▾</button>
-      <div class="mobile-dropdown-content">
-        <a href="applications.html#commercial">Aplicaciones Comerciales</a>
-        <a href="applications.html#personal">Aplicaciones Personales</a>
-      </div>
-
-      <a href="coi.html">Solicitud de COI</a>
-      <a href="claims.html">Reclamos</a>
-      <a href="about.html">Acerca de</a>
-      <a href="contact.html">Contacto</a>
-    </div>
-  </header>
-
-  <!-- LANGUAGE TOGGLE -->
-  <div class="toggle-wrapper">
-    <label class="toggle-switch">
-      <input type="checkbox" id="langToggle" onclick="toggleLanguage()">
-      <span class="slider"></span>
-    </label>
-  </div>
-
-  <!-- MAIN CONTENT ES -->
-  <section>
-    <h2>Nuestros Servicios</h2>
-    <p>ACES Insurance Services ofrece una amplia gama de soluciones de aseguranza personal, comercial y de propiedad.</p>
-  </section>
-
-  <!-- PROPERTY LINES ES -->
-  <section id="property-lines-es">
-    <h2>Líneas de Propiedad</h2>
-    <div class="services-grid">
-      <div class="service-box"><h3>Aseguranza de Casa</h3></div>
-      <div class="service-box"><h3>Aseguranza de Renta</h3></div>
-      <div class="service-box"><h3>Aseguranza de Condominio</h3></div>
-      <div class="service-box"><h3>Aseguranza para Propietarios</h3></div>
-      <div class="service-box"><h3>Aseguranza contra Inundaciones</h3></div>
-      <div class="service-box"><h3>Aseguranza contra Vientos</h3></div>
     </div>
   </section>
 
-  <!-- PERSONAL LINES ES -->
-  <section id="personal-lines-es">
-    <h2>Líneas Personales</h2>
-    <div class="services-grid">
-      <div class="service-box"><h3>Aseguranza de Carro</h3></div>
-      <div class="service-box"><h3>Aseguranza de Moto</h3></div>
-      <div class="service-box"><h3>Aseguranza de RV</h3></div>
-      <div class="service-box"><h3>Aseguranza de Carrito de Golf</h3></div>
-      <div class="service-box"><h3>Aseguranza de Vida</h3></div>
-    </div>
-  </section>
-
-  <!-- COMMERCIAL LINES ES -->
-  <section id="commercial-lines-es">
-    <h2>Líneas Comerciales</h2>
-    <div class="services-grid">
-      <div class="service-box"><h3>Responsabilidad General</h3></div>
-      <div class="service-box"><h3>Aseguranza Comercial de Auto</h3></div>
-      <div class="service-box"><h3>Compensación al Trabajador</h3></div>
-      <div class="service-box"><h3>Fianzas</h3></div>
-      <div class="service-box"><h3>Líneas Especializadas</h3></div>
-    </div>
-  </section>
-
-  <!-- FOOTER ES -->
   <footer class="footer">
-    <img src="image2.png" alt="ACES Logo" class="footer-logo">
+    <img src="image2.png" class="footer-logo">
     <p>© 2026 ACES Insurance Services</p>
   </footer>
 
 </div>
 
-<!-- ============================
-     SCRIPTS
-============================ -->
+<!-- ================= SPANISH ================= -->
+<div id="spanish" style="display:none;opacity:0;">
+
+  <section class="about">
+    <h2>Nuestros Servicios</h2>
+    <p>
+      ACES Insurance Services ofrece soluciones de aseguranza para familias y negocios en Texas.
+      Explore nuestras opciones principales a continuación.
+    </p>
+  </section>
+
+  <section id="services">
+    <h2>Soluciones de Aseguranza</h2>
+
+    <div class="services-grid">
+
+      <a href="applications.html#life" class="service-link">
+        <div class="service-box">
+          <img src="icon-life-aces.png" class="service-icon">
+          <h3>Aseguranza de Vida</h3>
+          <p>Cobertura diseñada para proteger a sus seres queridos.</p>
+        </div>
+      </a>
+
+      <a href="applications.html#commercial" class="service-link">
+        <div class="service-box">
+          <img src="icon-commercial-aces.png" class="service-icon">
+          <h3>Aseguranza Comercial</h3>
+          <p>Protección personalizada para su negocio.</p>
+        </div>
+      </a>
+
+      <a href="applications.html#property" class="service-link">
+        <div class="service-box">
+          <img src="icon-property-aces.png" class="service-icon">
+          <h3>Aseguranza de Propiedad</h3>
+          <p>Proteja su hogar y bienes valiosos.</p>
+        </div>
+      </a>
+
+      <a href="applications.html#auto" class="service-link">
+        <div class="service-box">
+          <img src="icon-auto-aces.png" class="service-icon">
+          <h3>Aseguranza de Auto</h3>
+          <p>Cobertura confiable para sus vehículos.</p>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <img src="image2.png" class="footer-logo">
+    <p>© 2026 ACES Insurance Services</p>
+  </footer>
+
+</div>
+
+<!-- ================= NAVIGATION TEMPLATES ================= -->
+<nav id="navEN" style="display:none;">
+  <div class="dropdown">
+    <span class="nav-link dropdown-toggle">Services ▾</span>
+    <div class="dropdown-menu">
+      <a href="services.html#life">Life Insurance</a>
+      <a href="services.html#personal-lines">Personal Insurance</a>
+      <a href="services.html#commercial-lines">Commercial Insurance</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <span class="nav-link dropdown-toggle">Applications ▾</span>
+    <div class="dropdown-menu">
+      <a href="applications.html#commercial">Commercial Apps</a>
+      <a href="applications.html#personal">Personal Apps</a>
+    </div>
+  </div>
+
+  <a class="nav-link" href="coi.html">COI Request</a>
+  <a class="nav-link" href="claims.html">Claims</a>
+  <a class="nav-link" href="about.html">About</a>
+  <a class="nav-link" href="contact.html">Contact</a>
+</nav>
+
+<nav id="navES" style="display:none;">
+  <div class="dropdown">
+    <span class="nav-link dropdown-toggle">Servicios ▾</span>
+    <div class="dropdown-menu">
+      <a href="services.html#life-es">Seguro de Vida</a>
+      <a href="services.html#personal-lines-es">Seguro Personal</a>
+      <a href="services.html#commercial-lines-es">Seguro Comercial</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <span class="nav-link dropdown-toggle">Aplicaciones ▾</span>
+    <div class="dropdown-menu">
+      <a href="applications.html#commercial">Aplicaciones Comerciales</a>
+      <a href="applications.html#personal">Aplicaciones Personales</a>
+    </div>
+  </div>
+
+  <a class="nav-link" href="coi.html">Solicitud de COI</a>
+  <a class="nav-link" href="claims.html">Reclamos</a>
+  <a class="nav-link" href="about.html">Acerca de</a>
+  <a class="nav-link" href="contact.html">Contacto</a>
+</nav>
+
+<script src="global.js"></script>
+
+<!-- LANGUAGE SWITCH SCRIPT -->
 <script>
-function toggleLanguage() {
-  const english = document.getElementById("english");
-  const spanish = document.getElementById("spanish");
-  const toggle = document.getElementById("langToggle");
+document.querySelectorAll('.lang-option').forEach(option => {
+  option.addEventListener('click', () => {
 
-  if (toggle.checked) {
-    english.style.opacity = 0;
-    setTimeout(() => {
-      english.style.display = "none";
-      spanish.style.display = "block";
-      setTimeout(() => { spanish.style.opacity = 1; }, 50);
-      filterLines();
-    }, 300);
-  } else {
-    spanish.style.opacity = 0;
-    setTimeout(() => {
-      spanish.style.display = "none";
-      english.style.display = "block";
-      setTimeout(() => { english.style.opacity = 1; }, 50);
-      filterLines();
-    }, 300);
-  }
-}
+    document.querySelectorAll('.lang-option').forEach(o => o.classList.remove('active'));
+    option.classList.add('active');
 
-function toggleMobileMenu(lang) {
-  const menuId = lang === 'es' ? 'mobileMenu-es' : 'mobileMenu-en';
-  const menu = document.getElementById(menuId);
-  menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
-}
+    const lang = option.dataset.lang;
 
-function toggleMobileDropdown(button) {
-  const content = button.nextElementSibling;
-  content.style.display = (content.style.display === "block") ? "none" : "block";
-}
-
-function filterLines() {
-  const hash = window.location.hash.replace("#", "");
-
-  const enSections = {
-    "commercial-lines": document.getElementById("commercial-lines"),
-    "personal-lines": document.getElementById("personal-lines"),
-    "property-lines": document.getElementById("property-lines")
-  };
-
-  const esSections = {
-    "commercial-lines-es": document.getElementById("commercial-lines-es"),
-    "personal-lines-es": document.getElementById("personal-lines-es"),
-    "property-lines-es": document.getElementById("property-lines-es")
-  };
-
-  const toggle = document.getElementById("langToggle");
-  const activeSections = toggle.checked ? esSections : enSections;
-
-  if (!hash) {
-    Object.values(activeSections).forEach(sec => sec.style.display = "block");
-    return;
-  }
-
-  Object.keys(activeSections).forEach(key => {
-    if (key === hash || key === hash + "-es") {
-      activeSections[key].style.display = "block";
+    if (lang === "english") {
+      document.getElementById("english").style.display = "block";
+      document.getElementById("spanish").style.display = "none";
+      document.getElementById("navContainer").innerHTML = document.getElementById("navEN").innerHTML;
     } else {
-      activeSections[key].style.display = "none";
+      document.getElementById("english").style.display = "none";
+      document.getElementById("spanish").style.display = "block";
+      document.getElementById("navContainer").innerHTML = document.getElementById("navES").innerHTML;
     }
   });
-}
+});
+</script>
 
-window.addEventListener("load", filterLines);
-window.addEventListener("hashchange", filterLines);
+<script>
+document.addEventListener("scroll", () => {
+  const header = document.querySelector(".aces-header");
+  if (window.scrollY > 10) header.classList.add("scrolled");
+  else header.classList.remove("scrolled");
+});
 </script>
 
 </body>
