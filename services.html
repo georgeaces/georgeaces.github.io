@@ -5,7 +5,53 @@
   <title>Services - ACES Insurance Services</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="style.css?v=50">
+  <link rel="stylesheet" href="style.css?v=51">
+
+  <style>
+    .service-category {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .service-category:hover {
+      box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+    }
+
+    .service-category h3 {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .service-details {
+      display: none;
+      margin-top: 15px;
+      padding-left: 10px;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .service-details ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .service-details li {
+      padding: 6px 0;
+      border-bottom: 1px solid #eee;
+    }
+  </style>
 </head>
 
 <body>
@@ -18,7 +64,6 @@
       <img src="image2.png" alt="ACES Insurance Services Logo" class="header-logo-img">
     </a>
 
-    <!-- NEW FLAG + TEXT LANGUAGE SWITCH -->
     <div class="lang-switch">
       <span class="lang-option active" data-lang="english">🇺🇸 EN</span>
       <span class="divider">|</span>
@@ -64,50 +109,67 @@
 
   <section class="about">
     <h2>Our Services</h2>
-    <p>
-      ACES Insurance Services provides trusted insurance solutions for families and businesses across Texas.
-      Explore our core offerings below.
-    </p>
+    <p>Select a category below to view the insurance products we offer.</p>
   </section>
 
-  <section id="services">
-    <h2>Insurance Solutions</h2>
+  <section class="page-section">
 
-    <div class="services-grid">
-
-      <a href="applications.html#life" class="service-link">
-        <div class="service-box">
-          <img src="icon-life-aces.png" class="service-icon">
-          <h3>Life Insurance</h3>
-          <p>Coverage designed to protect your loved ones.</p>
-        </div>
-      </a>
-
-      <a href="applications.html#commercial" class="service-link">
-        <div class="service-box">
-          <img src="icon-commercial-aces.png" class="service-icon">
-          <h3>Commercial Insurance</h3>
-          <p>Customized protection for your business.</p>
-        </div>
-      </a>
-
-      <a href="applications.html#property" class="service-link">
-        <div class="service-box">
-          <img src="icon-property-aces.png" class="service-icon">
-          <h3>Property Insurance</h3>
-          <p>Safeguard your home and valuable assets.</p>
-        </div>
-      </a>
-
-      <a href="applications.html#auto" class="service-link">
-        <div class="service-box">
-          <img src="icon-auto-aces.png" class="service-icon">
-          <h3>Auto Insurance</h3>
-          <p>Reliable coverage for your vehicles.</p>
-        </div>
-      </a>
-
+    <!-- LIFE -->
+    <div class="service-category" data-cat="life">
+      <h3>Life Insurance <span>➤</span></h3>
+      <div class="service-details" id="life-details">
+        <ul>
+          <li>Term Life</li>
+          <li>Whole Life</li>
+          <li>Final Expense</li>
+        </ul>
+      </div>
     </div>
+
+    <!-- COMMERCIAL -->
+    <div class="service-category" data-cat="commercial">
+      <h3>Commercial Insurance <span>➤</span></h3>
+      <div class="service-details" id="commercial-details">
+        <ul>
+          <li>General Liability</li>
+          <li>Business Owners Policy (BOP)</li>
+          <li>Commercial Auto</li>
+          <li>Workers Compensation</li>
+          <li>Commercial Property</li>
+          <li>Bonds</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- PROPERTY -->
+    <div class="service-category" data-cat="property">
+      <h3>Property Insurance <span>➤</span></h3>
+      <div class="service-details" id="property-details">
+        <ul>
+          <li>Homeowners</li>
+          <li>Renters</li>
+          <li>Condo</li>
+          <li>Landlord</li>
+          <li>Flood</li>
+          <li>Windstorm</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- AUTO -->
+    <div class="service-category" data-cat="auto">
+      <h3>Auto Insurance <span>➤</span></h3>
+      <div class="service-details" id="auto-details">
+        <ul>
+          <li>Auto</li>
+          <li>Motorcycle</li>
+          <li>RV</li>
+          <li>ATV</li>
+          <li>Golf Cart</li>
+        </ul>
+      </div>
+    </div>
+
   </section>
 
   <footer class="footer">
@@ -149,50 +211,67 @@
 
   <section class="about">
     <h2>Nuestros Servicios</h2>
-    <p>
-      ACES Insurance Services ofrece soluciones de aseguranza para familias y negocios en Texas.
-      Explore nuestras opciones principales a continuación.
-    </p>
+    <p>Seleccione una categoría para ver los productos que ofrecemos.</p>
   </section>
 
-  <section id="services">
-    <h2>Soluciones de Aseguranza</h2>
+  <section class="page-section">
 
-    <div class="services-grid">
-
-      <a href="applications.html#life" class="service-link">
-        <div class="service-box">
-          <img src="icon-life-aces.png" class="service-icon">
-          <h3>Aseguranza de Vida</h3>
-          <p>Cobertura diseñada para proteger a sus seres queridos.</p>
-        </div>
-      </a>
-
-      <a href="applications.html#commercial" class="service-link">
-        <div class="service-box">
-          <img src="icon-commercial-aces.png" class="service-icon">
-          <h3>Aseguranza Comercial</h3>
-          <p>Protección personalizada para su negocio.</p>
-        </div>
-      </a>
-
-      <a href="applications.html#property" class="service-link">
-        <div class="service-box">
-          <img src="icon-property-aces.png" class="service-icon">
-          <h3>Aseguranza de Propiedad</h3>
-          <p>Proteja su hogar y bienes valiosos.</p>
-        </div>
-      </a>
-
-      <a href="applications.html#auto" class="service-link">
-        <div class="service-box">
-          <img src="icon-auto-aces.png" class="service-icon">
-          <h3>Aseguranza de Auto</h3>
-          <p>Cobertura confiable para sus vehículos.</p>
-        </div>
-      </a>
-
+    <!-- VIDA -->
+    <div class="service-category" data-cat="life-es">
+      <h3>Seguro de Vida <span>➤</span></h3>
+      <div class="service-details" id="life-es-details">
+        <ul>
+          <li>Seguro de Vida a Término</li>
+          <li>Seguro de Vida Entera</li>
+          <li>Gastos Finales</li>
+        </ul>
+      </div>
     </div>
+
+    <!-- COMERCIAL -->
+    <div class="service-category" data-cat="commercial-es">
+      <h3>Seguro Comercial <span>➤</span></h3>
+      <div class="service-details" id="commercial-es-details">
+        <ul>
+          <li>Responsabilidad General</li>
+          <li>Póliza para Dueños de Negocio (BOP)</li>
+          <li>Auto Comercial</li>
+          <li>Compensación al Trabajador</li>
+          <li>Propiedad Comercial</li>
+          <li>Fianzas</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- PROPIEDAD -->
+    <div class="service-category" data-cat="property-es">
+      <h3>Seguro de Propiedad <span>➤</span></h3>
+      <div class="service-details" id="property-es-details">
+        <ul>
+          <li>Casa</li>
+          <li>Renteros</li>
+          <li>Condominio</li>
+          <li>Propietario</li>
+          <li>Inundación</li>
+          <li>Viento</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- AUTO -->
+    <div class="service-category" data-cat="auto-es">
+      <h3>Seguro de Auto <span>➤</span></h3>
+      <div class="service-details" id="auto-es-details">
+        <ul>
+          <li>Auto</li>
+          <li>Motocicleta</li>
+          <li>RV</li>
+          <li>ATV</li>
+          <li>Carrito de Golf</li>
+        </ul>
+      </div>
+    </div>
+
   </section>
 
   <footer class="footer">
@@ -204,8 +283,9 @@
 
 
 
-<!-- ⭐ LANGUAGE + NAV SCRIPT -->
+<!-- ⭐ LANGUAGE + NAV + CATEGORY SCRIPT -->
 <script>
+/* LANGUAGE SWITCH */
 document.querySelectorAll('.lang-option').forEach(option => {
   option.addEventListener('click', () => {
 
@@ -231,6 +311,34 @@ document.querySelectorAll('.lang-option').forEach(option => {
 // Load English nav on page load
 document.getElementById("navContainer").innerHTML =
   document.getElementById("navEN").innerHTML;
+
+
+
+/* CATEGORY EXPANSION */
+document.querySelectorAll('.service-category').forEach(cat => {
+  cat.addEventListener('click', () => {
+    const id = cat.dataset.cat + "-details";
+    const box = document.getElementById(id);
+
+    // collapse all
+    document.querySelectorAll('.service-details').forEach(d => d.style.display = "none");
+
+    // expand selected
+    if (box) box.style.display = "block";
+  });
+});
+
+
+
+/* URL HASH HANDLING */
+window.addEventListener("load", () => {
+  const hash = window.location.hash.replace("#", "");
+
+  if (!hash) return;
+
+  const target = document.querySelector(`[data-cat="${hash}"]`);
+  if (target) target.click();
+});
 </script>
 
 <script>
