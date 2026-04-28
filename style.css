@@ -33,7 +33,6 @@ body {
   transition: box-shadow 0.3s ease;
 }
 
-/* Sticky shadow on scroll */
 .aces-header.scrolled {
   box-shadow: 0 4px 14px rgba(0,0,0,0.12);
 }
@@ -123,7 +122,6 @@ body {
   font-size: 1rem;
 }
 
-/* Base nav link */
 .nav-link {
   position: relative;
   color: #111;
@@ -133,7 +131,6 @@ body {
   padding-bottom: 4px;
 }
 
-/* Center‑out underline animation */
 .nav-link::after {
   content: "";
   position: absolute;
@@ -167,7 +164,6 @@ body {
   cursor: pointer;
 }
 
-/* Dropdown container */
 .dropdown-menu {
   position: absolute;
   top: 100%;
@@ -187,14 +183,12 @@ body {
   opacity: 0;
 }
 
-/* Delay prevents accidental closing */
 .dropdown:hover .dropdown-menu {
   display: flex;
   pointer-events: auto;
   opacity: 1;
 }
 
-/* Dropdown links */
 .dropdown-menu a {
   padding: 10px 14px;
   text-decoration: none;
@@ -203,14 +197,12 @@ body {
   white-space: nowrap;
 }
 
-/* Medium ACES red under‑glow */
 .dropdown-menu a:hover {
   background: transparent;
   color: #d40000;
   text-shadow: 0 0 12px rgba(212, 0, 0, 0.75);
 }
 
-/* Fade animation */
 @keyframes dropdownFade {
   from { opacity: 0; transform: translateY(-6px); }
   to { opacity: 1; transform: translateY(0); }
@@ -330,14 +322,12 @@ body {
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
-/* Strong ACES under‑glow */
 .service-link:hover .service-box {
   transform: translateY(-12px);
   box-shadow: 0 18px 38px rgba(212, 0, 0, 0.65);
   border-color: #d40000;
 }
 
-/* Titles always visible + glow on hover */
 .service-box h3 {
   color: #111;
   transition: color 0.25s ease;
@@ -347,7 +337,6 @@ body {
   color: #d40000;
 }
 
-/* Descriptions always visible */
 .service-box p {
   color: #111;
   opacity: 1;
@@ -404,7 +393,6 @@ body {
   color: #111;
 }
 
-/* Center Chamber badge */
 .trust-badge-wrapper {
   text-align: center;
 }
