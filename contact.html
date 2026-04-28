@@ -5,7 +5,8 @@
   <title>Contact - ACES Insurance Services</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="style.css?v=43">
+  <!-- IMPORTANT: bump version to force refresh -->
+  <link rel="stylesheet" href="style.css?v=50">
 
   <style>
     body {
@@ -88,6 +89,7 @@
 
 <body>
 
+<!-- ⭐ GLOBAL HEADER -->
 <header class="aces-header">
   <div class="header-inner">
 
@@ -95,6 +97,7 @@
       <img src="image2.png" alt="ACES Insurance Services Logo" class="header-logo-img">
     </a>
 
+    <!-- NEW FLAG + TEXT LANGUAGE SWITCH -->
     <div class="lang-switch">
       <span class="lang-option active" data-lang="english">🇺🇸 EN</span>
       <span class="divider">|</span>
@@ -110,9 +113,10 @@
 
 
 
-<!-- ⭐ ENGLISH -->
+<!-- ⭐ ENGLISH WRAPPER -->
 <div id="english">
 
+  <!-- Hidden EN nav -->
   <nav id="navEN" style="display:none;">
     <div class="dropdown">
       <span class="nav-link dropdown-toggle">Services ▾</span>
@@ -206,8 +210,10 @@
 
 
 
-<!-- ⭐ SPANISH -->
+<!-- ⭐ SPANISH WRAPPER -->
 <div id="spanish" style="display:none;">
+
+  <!-- Hidden ES nav -->
   <nav id="navES" style="display:none;">
     <div class="dropdown">
       <span class="nav-link dropdown-toggle">Servicios ▾</span>
@@ -267,11 +273,12 @@
 
 
 
-<!-- ⭐ FIXED LANGUAGE + NAV SCRIPT -->
+<!-- ⭐ FINAL WORKING LANGUAGE + NAV SCRIPT -->
 <script>
 document.querySelectorAll('.lang-option').forEach(option => {
   option.addEventListener('click', () => {
 
+    // highlight active
     document.querySelectorAll('.lang-option').forEach(o => o.classList.remove('active'));
     option.classList.add('active');
 
@@ -280,17 +287,20 @@ document.querySelectorAll('.lang-option').forEach(option => {
     if (lang === "english") {
       document.getElementById("english").style.display = "block";
       document.getElementById("spanish").style.display = "none";
-      document.getElementById("navContainer").innerHTML = document.getElementById("navEN").innerHTML;
+      document.getElementById("navContainer").innerHTML =
+        document.getElementById("navEN").innerHTML;
     } else {
       document.getElementById("english").style.display = "none";
-      document.getElementById("spanish").style.display = "block";   <!-- THIS FIXES THE BLANK PAGE -->
-      document.getElementById("navContainer").innerHTML = document.getElementById("navES").innerHTML;
+      document.getElementById("spanish").style.display = "block";  // ⭐ FIXED
+      document.getElementById("navContainer").innerHTML =
+        document.getElementById("navES").innerHTML;
     }
   });
 });
 
 // Load English nav on page load
-document.getElementById("navContainer").innerHTML = document.getElementById("navEN").innerHTML;
+document.getElementById("navContainer").innerHTML =
+  document.getElementById("navEN").innerHTML;
 </script>
 
 <script>
