@@ -17,11 +17,13 @@
     .services-wrapper h2 {
       text-align: center;
       margin-bottom: 10px;
+      color: #111;
     }
 
     .services-wrapper p.section-intro {
       text-align: center;
       margin-bottom: 30px;
+      color: #555;
     }
 
     .services-group {
@@ -32,8 +34,9 @@
     .services-group-title {
       font-size: 1.4rem;
       margin-bottom: 10px;
-      border-bottom: 2px solid #ddd;
+      border-bottom: 3px solid #d40000;
       padding-bottom: 6px;
+      color: #111;
     }
 
     .services-subtitle {
@@ -51,17 +54,17 @@
     .service-card {
       position: relative;
       background: #ffffff;
-      border-radius: 14px;
-      border: 2px solid #111;
+      border-radius: 10px;
+      border: 2px solid #ddd;
       padding: 26px 18px 30px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
       text-decoration: none;
       color: #111;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
     }
 
     .service-card::before {
@@ -71,6 +74,7 @@
       left: 10px;
       font-size: 0.9rem;
       font-weight: 700;
+      color: #d40000;
     }
 
     .service-card::after {
@@ -81,11 +85,13 @@
       font-size: 0.9rem;
       font-weight: 700;
       transform: rotate(180deg);
+      color: #d40000;
     }
 
     .service-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 24px rgba(0,0,0,0.22);
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(212, 0, 0, 0.25);
+      border-color: #d40000;
     }
 
     .card-center {
@@ -96,16 +102,18 @@
     }
 
     .card-spade {
-      font-size: 2.4rem;
+      font-size: 2.2rem;
       line-height: 1;
       margin-bottom: 4px;
+      color: #d40000;
     }
 
     .card-title {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.04em;
+      color: #111;
     }
 
     .card-desc {
@@ -119,7 +127,7 @@
       text-transform: uppercase;
       letter-spacing: 0.12em;
       margin-top: 6px;
-      color: #333;
+      color: #999;
     }
 
     @media (max-width: 600px) {
