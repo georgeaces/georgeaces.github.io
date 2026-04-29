@@ -458,6 +458,21 @@
     });
   }
 
+  // Highlight correct dropdown item based on ?type=
+  function highlightActiveMenu() {
+    const params = new URLSearchParams(window.location.search);
+    const type = params.get('type');
+    if (!type) return;
+
+    const links = document.querySelectorAll('#navContainer a');
+
+    links.forEach(link => {
+      if (link.href.includes(`type=${type}`)) {
+        link.classList.add('active-menu');
+      }
+    });
+  }
+
   // Language switch
   document.querySelectorAll('.lang-option').forEach(option => {
     option.addEventListener('click', () => {
@@ -479,8 +494,11 @@
           document.getElementById("navES").innerHTML;
       }
 
-      // ⭐ CRITICAL: Reapply filtering after switching languages
-      applyServiceFilter();
+      // Re-highlight menu after language switch
+      highlightActiveMenu();
+
+      // Reapply filtering after switching languages
+      setTimeout(applyServiceFilter, 50);
     });
   });
 
@@ -488,9 +506,11 @@
   document.getElementById("navContainer").innerHTML =
     document.getElementById("navEN").innerHTML;
 
-  // Run filter on load + back/forward navigation
-  window.addEventListener('load', applyServiceFilter);
-  window.addEventListener('popstate', applyServiceFilter);
+  // Highlight correct menu item on load
+  highlightActiveMenu();
+
+  // ⭐ Re-run filter AFTER nav + highlight are applied
+  setTimeout(applyServiceFilter, 50);
 
   // Mobile nav toggle
   document.getElementById("mobileNavToggle").addEventListener("click", () => {
