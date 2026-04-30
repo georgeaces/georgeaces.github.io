@@ -7,11 +7,7 @@ body{
   font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   background:#fff;
   color:#111;
-  animation:fadeInBody .6s ease-out;
 }
-@keyframes fadeInBody{from{opacity:0;}to{opacity:1;}}
-#english,#spanish{transition:opacity .3s ease;}
-
 h2,h3{margin-top:0;}
 a{text-decoration:none;color:inherit;}
 
@@ -25,9 +21,7 @@ a{text-decoration:none;color:inherit;}
   position:sticky;
   top:0;
   z-index:1000;
-  transition:box-shadow .3s ease;
 }
-.aces-header.scrolled{box-shadow:0 4px 14px rgba(0,0,0,.12);}
 .header-inner{
   max-width:1200px;
   margin:auto;
@@ -35,12 +29,6 @@ a{text-decoration:none;color:inherit;}
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:20px;
-  animation:fadeDownHeader .5s ease-out;
-}
-@keyframes fadeDownHeader{
-  from{opacity:0;transform:translateY(-10px);}
-  to{opacity:1;transform:translateY(0);}
 }
 .header-logo-img{height:52px;width:auto;}
 
@@ -54,29 +42,21 @@ a{text-decoration:none;color:inherit;}
   gap:6px;
   font-weight:700;
   cursor:pointer;
-  font-size:.95rem;
-  user-select:none;
 }
 .lang-option{
-  display:flex;
-  align-items:center;
-  gap:4px;
   padding:4px 8px;
   border-radius:6px;
   transition:all .25s ease;
-  color:#111;
 }
 .lang-option:hover{
   background:rgba(212,0,0,.12);
   color:#d40000;
-  text-shadow:0 0 8px rgba(212,0,0,.55);
 }
 .lang-option.active{
   background:#d40000;
   color:#fff;
-  box-shadow:0 0 10px rgba(212,0,0,.65);
 }
-.divider{font-weight:700;color:#555;}
+.divider{color:#555;font-weight:700;}
 
 
 /* ============================================================
@@ -87,15 +67,13 @@ a{text-decoration:none;color:inherit;}
   display:flex;
   align-items:center;
   gap:22px;
-  font-size:1rem;
 }
 .nav-link{
   position:relative;
-  color:#111;
   font-weight:600;
-  cursor:pointer;
   padding-bottom:4px;
 }
+.nav-link:hover{color:#d40000;}
 .nav-link::after{
   content:"";
   position:absolute;
@@ -104,14 +82,12 @@ a{text-decoration:none;color:inherit;}
   width:0;
   height:2px;
   background:#d40000;
-  transition:all .3s ease;
+  transition:.3s;
   transform:translateX(-50%);
 }
 .nav-link:hover::after{width:100%;}
-.nav-link:hover{color:#d40000;}
 
 .dropdown{position:relative;}
-.dropdown-toggle{cursor:pointer;}
 .dropdown-menu{
   position:absolute;
   top:100%;
@@ -124,23 +100,14 @@ a{text-decoration:none;color:inherit;}
   display:none;
   flex-direction:column;
   box-shadow:0 4px 12px rgba(0,0,0,.15);
-  animation:dropdownFade .25s ease-out;
-  z-index:999;
 }
 .dropdown-menu.show{display:flex;}
 .dropdown-menu a{
   padding:10px 14px;
   font-weight:500;
-  white-space:nowrap;
 }
 .dropdown-menu a:hover{
-  background:transparent;
   color:#d40000;
-  text-shadow:0 0 12px rgba(212,0,0,.75);
-}
-@keyframes dropdownFade{
-  from{opacity:0;transform:translateY(-6px);}
-  to{opacity:1;transform:translateY(0);}
 }
 
 
@@ -149,251 +116,144 @@ a{text-decoration:none;color:inherit;}
 ============================================================ */
 .mobile-nav-toggle{
   display:none;
-  margin-left:auto;
   font-size:1.4rem;
-  cursor:pointer;
   background:none;
   border:none;
 }
-.nav-menu.open{
-  position:absolute;
-  top:100%;
-  right:0;
-  left:0;
-  background:#fff;
-  flex-direction:column;
-  padding:10px 16px 12px;
-  border-bottom:1px solid #ddd;
-}
 @media(max-width:900px){
   .nav-menu{display:none;}
-  .nav-menu.open{display:flex;}
+  .nav-menu.open{
+    display:flex;
+    flex-direction:column;
+    background:#fff;
+    padding:10px 16px;
+    border-bottom:1px solid #ddd;
+  }
   .mobile-nav-toggle{display:block;}
 }
 
 
 /* ============================================================
-   SERVICES GRID
+   SECTION BASE — CENTER + UNDERGLOW
 ============================================================ */
+#english > section,
+#spanish > section{
+  max-width:1200px;
+  margin:40px auto;
+  padding:60px 20px;
+  border-radius:12px;
+  box-shadow:0 18px 48px rgba(0,0,0,.28); /* STRONG UNDERGLOW */
+  text-align:center;
+}
+
+
+/* ============================================================
+   SECTION 1 — WHO WE ARE (OFF-WHITE)
+============================================================ */
+.about{
+  background:#fafafa;
+  color:#111;
+}
+.about p{
+  max-width:700px;
+  margin:0 auto 20px auto;
+  color:#333;
+}
+.about .btn-small{
+  background:#d40000;
+  color:#fff;
+  padding:10px 18px;
+  border-radius:6px;
+  font-weight:600;
+}
+
+
+/* ============================================================
+   SECTION 2 — OUR SERVICES (BLACK)
+============================================================ */
+#services{
+  background:#000;
+  color:#fff;
+}
+#services h2{color:#fff;}
+
 .services-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:32px;
   margin-top:20px;
 }
+
+.service-link{display:block;color:inherit;}
+
 .service-box{
-  background:rgba(255,255,255,0.92);
+  background:#fff;
+  color:#111;
+  padding:24px;
+  border-radius:10px;
   border:1px solid #ddd;
-  border-radius:8px;
-  padding:20px;
-  text-align:center;
-  transition:all .25s ease;
+  box-shadow:0 2px 6px rgba(0,0,0,.08);
+  transition:.25s;
 }
 .service-box:hover{
-  transform:translateY(-4px);
-  box-shadow:0 4px 14px rgba(0,0,0,.12);
+  transform:translateY(-12px);
+  box-shadow:0 18px 38px rgba(212,0,0,.65);
+  border-color:#d40000;
 }
 .service-icon{
-  width:60px;
-  height:auto;
-  margin-bottom:10px;
+  width:90px;
+  height:90px;
+  object-fit:contain;
+  margin-bottom:12px;
 }
 
 
 /* ============================================================
-   CONTACT PAGE — SYSTEM 2
+   SECTION 3 — CONTACT US (RED)
 ============================================================ */
-.contact-page{
-  padding:40px 20px;
-  max-width:1200px;
-  margin:auto;
-}
-.contact-intro{
-  font-size:1.1rem;
-  margin-bottom:25px;
-  line-height:1.5;
-}
-.contact-layout{
-  display:flex;
-  gap:40px;
-  flex-wrap:wrap;
-}
-
-.contact-info{flex:1;min-width:280px;}
-.contact-info h3{margin-bottom:10px;font-size:1.3rem;}
-.map-wrapper{margin-top:15px;}
-.map-frame{
-  width:100%;
-  height:260px;
-  border:0;
-  border-radius:8px;
-}
-
-.agent-section{flex:1.5;min-width:320px;}
-.agent-section h3{margin-bottom:12px;font-size:1.3rem;}
-.agent-layout{display:flex;gap:25px;}
-
-.agent-list{
-  width:40%;
-  border-right:2px solid #ddd;
-  padding-right:15px;
-}
-.agent-item{
-  padding:10px 0;
-  cursor:pointer;
-  border-bottom:1px solid #eee;
-  font-weight:500;
-  transition:color .25s ease,font-weight .25s ease;
-}
-.agent-item:hover{
-  color:#d40000;
-  font-weight:600;
-  text-shadow:0 0 8px rgba(212,0,0,.35);
-}
-
-.agent-panel{
-  width:60%;
-  padding-left:15px;
-}
-.agent-photo-large{
-  width:100%;
-  max-width:260px;
-  border-radius:8px;
-  margin-bottom:15px;
-  box-shadow:0 4px 12px rgba(0,0,0,.15);
-}
-.agent-panel h2{margin-bottom:5px;font-size:1.4rem;}
-.agent-panel p{margin:5px 0;font-size:1rem;}
-
-.btn-small{
-  display:inline-block;
-  padding:8px 16px;
+.contact-card{
   background:#d40000;
   color:#fff;
-  border-radius:4px;
-  margin-top:10px;
-  font-weight:600;
-  transition:background .25s ease,box-shadow .25s ease;
 }
-.btn-small:hover{
-  background:#a80000;
-  box-shadow:0 0 10px rgba(212,0,0,.55);
-}
-
-@media(max-width:900px){
-  .agent-layout{flex-direction:column;}
-  .agent-list,.agent-panel{
-    width:100%;
-    border:none;
-    padding:0;
-  }
-  .agent-photo-large{max-width:100%;}
-}
-
-
-/* ============================================================
-   ABOUT PAGE — TEAM FILTERS
-============================================================ */
-.team-filters{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-bottom:20px;
-}
-.team-filter-btn{
-  padding:8px 14px;
-  border-radius:4px;
+.contact-card .btn-small{
   background:#fff;
-  border:1px solid #d40000;
   color:#d40000;
-  cursor:pointer;
+  padding:10px 18px;
+  border-radius:6px;
   font-weight:600;
-  transition:all .25s ease;
-}
-.team-filter-btn:hover{
-  background:#d40000;
-  color:#fff;
-}
-.team-filter-btn.active{
-  background:#d40000;
-  color:#fff;
-}
-
-.team-card{
-  padding:20px;
-  border-radius:8px;
-  background:rgba(255,255,255,0.92);
-  border:1px solid #ddd;
-  text-align:center;
-  transition:all .25s ease;
-}
-.team-card:hover{
-  transform:translateY(-4px);
-  box-shadow:0 4px 14px rgba(0,0,0,.12);
 }
 
 
 /* ============================================================
-   FOOTER
+   SECTION 4 — PROUD MEMBER (WHITE)
+============================================================ */
+.trust{
+  background:#fff;
+  color:#111;
+}
+.trust-badge{
+  display:block;
+  margin:0 auto 20px auto;
+}
+.trust-qr-img{
+  width:160px;
+  display:block;
+  margin:10px auto;
+}
+
+
+/* ============================================================
+   FOOTER (BLACK)
 ============================================================ */
 .footer{
+  background:#000;
+  color:#fff;
   text-align:center;
-  padding:30px 20px;
+  padding:40px 20px;
   margin-top:40px;
-  background:#fafafa;
-  border-top:1px solid #ddd;
 }
 .footer-logo{
   width:120px;
-  height:auto;
-  margin-bottom:10px;
-}
-
-
-/* ============================================================
-   ACES COLOR STRIPE SYSTEM — FIXED FOR LANGUAGE WRAPPERS
-============================================================ */
-
-/* UNDERGLOW */
-#english > section,
-#spanish > section{
-  box-shadow:0 8px 24px rgba(0,0,0,.18);
-  position:relative;
-  z-index:1;
-}
-
-/* ENGLISH */
-#english > section:nth-of-type(1){
-  background:#d40000;
-  color:#fff;
-}
-#english > section:nth-of-type(2){
-  background:#000;
-  color:#fff;
-}
-#english > section:nth-of-type(3){
-  background:#ffffff;
-  color:#111;
-}
-#english > section:nth-of-type(4){
-  background:#d40000;
-  color:#fff;
-}
-
-/* SPANISH */
-#spanish > section:nth-of-type(1){
-  background:#d40000;
-  color:#fff;
-}
-#spanish > section:nth-of-type(2){
-  background:#000;
-  color:#fff;
-}
-#spanish > section:nth-of-type(3){
-  background:#ffffff;
-  color:#111;
-}
-#spanish > section:nth-of-type(4){
-  background:#d40000;
-  color:#fff;
+  display:block;
+  margin:0 auto 10px auto;
 }
